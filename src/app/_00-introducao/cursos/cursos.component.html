@@ -1,0 +1,23 @@
+<!-- Templates: sao a forma de declarar nosso comportamento feito na classe em javaScript no HTML-->
+
+
+<p>
+    Lista de cursos do portal {{ nomePortal }} <!-- Exemplo de interpolacao com  angular 2 utilizando a variavel nomePortal declarada na classe CursosComponent (sintax: {{ nomeVariavel }}) -->
+</p>
+
+<p>
+    Lista de cursos da variavel cursos
+</p>
+<ul>
+    <li *ngFor="let curso of cursos"> <!-- A diretiva ngFor itera sobre uma expressao fornecida entre " " no exemplo e criada uma lista com o conteudo da variavel cursos declarada na classe CursosComponent -->
+        {{ curso }}
+    </li>
+</ul>
+<p>
+    lista de cursos do service
+</p>
+<ul>
+    <li *ngFor="let curso of cursosService">
+        {{ curso }}
+    </li>
+</ul>

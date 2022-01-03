@@ -1,0 +1,150 @@
+<h1>Data Binding</h1>
+<section>
+    <h2>Propriety Binding e Interpolation</h2>
+    <!-- Interpolation -->
+    <article>
+        <h3>Interpolation / Interpolacao</h3>
+        <p>string renderizada com interpolacao: {{ url }}</p> <!-- recebe o valor da variavel url declarada no component data-binding.component.js -->
+        <p>O resultado de 1 + 1 e: {{ 1 + 1 }}</p> <!-- expressoes matematicas tambem podem ser feitas por meio da interpolacao -->
+        <p>O resultado de 1 + 1 nao e: {{ 1 + 1 + getValor()}} </p> <!-- metodos declarados no component tambem podem ser utilizados por meio da interpolacao -->
+        <p>Curtir curso angular: {{ cursoAngular && !getNaoCurtirCurso() }}</p> <!-- expresoes logicas com interpolacao -->
+    </article>
+
+    <!-- Propriety Binding -->
+    <article>
+        <!-- para utilizar dados do component podem ser utilizados tanto a interpolation quanto o propriety Binding, ambos os exemplos serao usados -->
+        <h3>Exemplo com interpolacao</h3>
+        <img src="{{ urlImagem }}"> <!-- Utilizando interpolacao, tambem e uma forma de propiety binding -->
+        <h3>Exemplo com propiety binding</h3>
+        <img [src]="urlImagem"> <!-- utilizando o propriety binding propriamente dito, sintax: [nome-da-propriedade]="nome-da-origem-no-component" -->
+        <img bind-src="urlImagem"> <!-- o exemplo da linha anterior e um sintax sugar (forma mais amigavel de declaracao, esta forma e como o angular interpreta "por baixo dos panos") -->
+        <!-- para inserir propriedades que nao sao padrao do elemento pode se usar [attr.nome-da-propriedade] -->
+    </article>
+
+    <article>
+        <h3>Class e Style Binding</h3>
+        <h4>Class binding</h4>
+        <div>
+            Selecione uma classe:
+            <select #variavel (change)="0"> <!-- variavel para armazenar o valor da opcao conforme a selecao entre as opcoes -->
+                <option value="alert-success">success</option>
+                <option value="alert-danger">danger</option>
+                <option value="alert-warning">warning</option>
+                <option value="alert-info">info</option>
+            </select>
+        </div>
+        <br>
+        <br>
+
+        <!-- lembrete, o css do Bootstrap esta declarado no elemento <head> em index.html -->
+        <!-- trecho de HTML retirado de https://getbootstrap.com/docs/5.1/components/alerts/ -->
+        <div class="alert" role="alert" [class.alert-success]="variavel.value == 'alert-success'">Deu bom</div> <!-- Class Binding, e usado para adcionar classes nos elementos HTML baseados em eventos -->
+        <div class="alert" role="alert" [class.alert-danger]="variavel.value == 'alert-danger'">Deu ruim</div> <!-- Sintax: [nome-do-atributo.valor]="valor-booleano" (true or false) -->
+        <div class="alert" role="alert" [class.alert-warning]="variavel.value == 'alert-warning'">Cuidado Ae !!</div> <!-- conforme os exemplos [class.nome-da-classe] = "classe.value == opcao-desejada" (classe referesse a variavel declarada no elemento select acima) -->
+        <div class="alert" role="alert" [class.alert-info]="variavel.value == 'alert-info'">So vim avisar uma coisa !</div>
+
+        <div class="alert {{ variavel.value }}" role="alert"> <!-- utilizando interpolacao para fazer class binding -->
+            Texto colorido de acordo com o valor do combobox.
+        </div>
+
+        <h4>Style Binding</h4>
+        <!-- para trabalhar com style binfing, iremos utilizar o atributo style nos elementos HTML -->
+        <!-- no exemplo abaixo, queremos que o texto do campo apareca somente se apcao "danger", for selecionada no combo box" -->
+        <!-- a forma de declaracao nos elementos HTML segue o padrao de declaracao proprirty binding-->
+        <p>selecione a opcao "danger" no combo box</p>
+        <div class="alert alert-danger" role="alert" [style.display]="variavel.value == 'alert-danger' ? 'block' : 'none'">Este texto aparece somente com a opcao "danger" selecionada</div> <!-- Sintax: [nome-do-atributo.valor]="valor-booleano" (true or false) -->
+        
+    </article>
+    <br><br>
+</section>
+
+<section>
+    <article>
+        <h3>Event binding</h3>
+        <div>
+            <!-- Event binding sintax: (nome-do-evento)="nome-do-metodo-a-ser-chamado" -->
+            <button class="btn btn-primary" 
+            (click)="botaoClicado()">
+                Me clique
+            </button>
+            <br>
+            <br>
+
+            <!-- e possivel passar os eventos como argumento para os metodos utilizando $event -->
+            <input type="text"
+                (keyup)="onKeyUp($event)"
+                (keyup.enter)="salvarValor($any(valorCampo).value)"
+                (blur)="salvarValor($any(valorCampo).value)"
+                 #valorCampo
+            >
+            <!-- a variavel #valorCampo declarada no template recebe uma referencia de &event.target -->
+            <!-- note que o metodo onKeyUp() recebe o evento como parametro, entretando como ja sabemos qual propriedade queremos escutar
+            no metodo valorSalvo() podemos passa-la diretamente -->
+
+            <p>Valor Atual: {{ valorAtualCampoInput }}</p>
+            <p>Valor Salvo apertar enter: {{ valorSalvoCampoInput }}</p>
+            <br>
+            <span
+                (mouseover)="onMouseOverOut()"
+                (mouseout)="onMouseOverOut()"
+                [class.highLight]="isMouseOver"
+            >Passe o mouse sobre mim
+            </span>
+        </div>
+    </article>
+</section>
+
+<section>
+    <article>
+        <h3>Two-way data binding</h3>
+        <div>
+            <!-- dessa forma estamos fazendo o two-way data binding de forma manual, sem economia de codigo, desta maneira para um campo
+            nao tem problema, mas em geral os formularios possuem muitos campos, e para implementar dessa forma o processo se torna trabalhoso -->
+            <input type="text"
+                [value]="nome"
+                (input)="nome = $any($event.target).value"
+            />
+
+            <!-- um outro exemplo, e utilizar o ngModel (representacao de um objeto ou um campo simples) -->
+            <!-- para utilizar o data binding bidirecional com ngModel, lembre-se de importar FormsModule, em seu modulo ou no modulo raiz (app.module) -->
+            <input type="text"
+                [ngModel]="nome"
+                (ngModelChange)="nome = $event"
+            />
+
+            <!-- agora vamos efetivamente utilizar o two-way data binding -->
+            <input type="text" [(ngModel)]="nome" /> <!-- essa tambem e uma forma de sintaxSugar -->
+            <input type="text" bindon-ngModel="nome" /> <!-- essa e a forma canonica -->
+            
+            <p>O que voce digitou foi: {{ nome }}</p>
+        </div>
+        <div>
+            <h4>two-way data binding com objetos</h4>
+
+            <p>Meu nome e {{ pessoa.nome }} e minha idade e {{ pessoa.idade }}</p>
+            <input type="text" [(ngModel)]="pessoa.nome" />
+            <input type="text" [(ngModel)]="pessoa.idade" />
+        </div>
+    </article>
+</section>
+
+<section class="input-output-properties">
+    <article>
+        <h3>Input/Output Properties</h3>
+        <h4>Input property</h4> 
+        <!-- Input Properties: utilizado para troca de dados entre components por meio de propriedades dos elementos HTML -->
+        <app-curso [nome]="nomeDoCurso" ></app-curso> <!-- selector oriundo do component InputPropertyComponent (vide o arquivo input-property-component.ts) -->
+        <!-- note que a propriedade [nome] recebe o valor da variavel nomeDoCurso oriunda de DataBindingComponent e guarda na variavel 
+             nome em InputPropertyComponent-->
+        <app-curso [nome]="nomeDoSegundoCurso"></app-curso>
+        <br>
+        <br>
+        <h4>Output property</h4>
+        <!-- note que a propriedade valor esta exposta como property do componente app-contador por meio do decorator @Input() no OutputPropertyComponent -->
+        <app-contador [valor]="10"
+            (mudou)="onMudouValor($event)"
+        ></app-contador>
+    </article>
+
+</section>
+

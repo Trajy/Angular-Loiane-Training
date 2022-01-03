@@ -1,0 +1,5 @@
+/* este arquivo possui escopo somente aos elementos do data-binding component */
+.highLight {
+    background-color: yellow;
+    font-weight: bold;
+}
