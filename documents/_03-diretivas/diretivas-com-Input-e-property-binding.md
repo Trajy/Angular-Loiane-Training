@@ -27,7 +27,7 @@ export class HighLightMouseDirective {
 }
 ```
 
-vamos implementar a classe Input em duas variaveis, a primeira, defaultColor, ira receber a cor quando o mouse nao estiver sobre o objeto, a segunda, highLightColor, ira receber a cor quando o mouse estiver sobre o objeto. Os dados serao recebidos por meio de propertyBinding.
+vamos implementar a classe Input em duas variaveis, a primeira, defaultColor, ira receber a cor quando o mouse nao estiver sobre o objeto, a segunda, highLightColor, ira receber a cor quando o mouse estiver sobre o objeto.
 
 ```typescript
 @Directive({
@@ -50,7 +50,8 @@ export class DiretivasComInputEPropertyBindingDirective {
   }
 }
 ```
-neste exemplo na primeira renderizacao do component ele ira possuir o fundo brando, pois inicialmente, como nao ocorreram eventos sobre o component Host (component Pai, neste exemplo a tag p), os metodos onMouseOver() e onMouseLeave() nao foram chamados.
+
+Os dados serao recebidos por meio de propertyBinding, neste exemplo na primeira renderizacao do component ele ira possuir o fundo branco, pois inicialmente, como nao ocorreram eventos sobre o component Host (component Pai, neste exemplo a tag p), os metodos onMouseOver() e onMouseLeave() nao foram chamados.
 
 ```HTML
 <p DiretivasComInputEPropertyBinding [defaultColor]="'grey'" [highLightColor]="'red'">

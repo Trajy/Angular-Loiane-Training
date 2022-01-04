@@ -24,6 +24,8 @@ import { HighLightMouseDirective } from './_03-diretivas/HostListener-e-HostBind
 import { ComponentParaTestarDiretivaComponent } from './_03-diretivas/HostListener-e-HostBinding/component-para-testar-diretiva/component-para-testar-diretiva.component';
 import { DiretivasComInputEPropertyBindingDirective } from './_03-diretivas/diretivas-com-input-e-propertyBinding/diretiva/diretivas-com-input-e-property-binding.directive';
 import { ComponentParaTestarDiretivaInputEPropertyBindingComponent } from './_03-diretivas/diretivas-com-input-e-propertyBinding/component-para-testar-diretiva-input-e-property-binding/component-para-testar-diretiva-input-e-property-binding.component';
+import { DiretivaDeEstruturaDirective } from './_03-diretivas/criando-diretiva-de-estrutura/diretiva/diretiva-de-estrutura.directive';
+import { ComponentParaTestarDiretivaDeEstruturaComponent } from './_03-diretivas/criando-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -43,7 +45,9 @@ import { ComponentParaTestarDiretivaInputEPropertyBindingComponent } from './_03
     HighLightMouseDirective, 
     ComponentParaTestarDiretivaComponent, 
     DiretivasComInputEPropertyBindingDirective, 
-    ComponentParaTestarDiretivaInputEPropertyBindingComponent,
+    ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
+    DiretivaDeEstruturaDirective, 
+    ComponentParaTestarDiretivaDeEstruturaComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
