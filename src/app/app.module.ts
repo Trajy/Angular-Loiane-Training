@@ -22,6 +22,8 @@ import { FundoAmareloDirective } from './_03-diretivas/ElementRef-Renderer/fundo
 import { DiretivasCustomizadasComponent } from './_03-diretivas/ElementRef-Renderer/diretivas-customizadas/diretivas-customizadas.component';
 import { HighLightMouseDirective } from './_03-diretivas/HostListener-e-HostBinding/highLight-mouse/high-light-mouse.directive';
 import { ComponentParaTestarDiretivaComponent } from './_03-diretivas/HostListener-e-HostBinding/component-para-testar-diretiva/component-para-testar-diretiva.component';
+import { DiretivasComInputEPropertyBindingDirective } from './_03-diretivas/diretivas-com-input-e-propertyBinding/diretiva/diretivas-com-input-e-property-binding.directive';
+import { ComponentParaTestarDiretivaInputEPropertyBindingComponent } from './_03-diretivas/diretivas-com-input-e-propertyBinding/component-para-testar-diretiva-input-e-property-binding/component-para-testar-diretiva-input-e-property-binding.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -39,7 +41,9 @@ import { ComponentParaTestarDiretivaComponent } from './_03-diretivas/HostListen
     FundoAmareloDirective, 
     DiretivasCustomizadasComponent, 
     HighLightMouseDirective, 
-    ComponentParaTestarDiretivaComponent,
+    ComponentParaTestarDiretivaComponent, 
+    DiretivasComInputEPropertyBindingDirective, 
+    ComponentParaTestarDiretivaInputEPropertyBindingComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
