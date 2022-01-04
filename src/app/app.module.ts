@@ -37,7 +37,9 @@ import { ComponentParaTestarDiretivaComponent } from './_03-diretivas/HostListen
     ElvisOperatorComponent, 
     NgContentExempleComponent, 
     FundoAmareloDirective, 
-    DiretivasCustomizadasComponent, HighLightMouseDirective, ComponentParaTestarDiretivaComponent,
+    DiretivasCustomizadasComponent, 
+    HighLightMouseDirective, 
+    ComponentParaTestarDiretivaComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
