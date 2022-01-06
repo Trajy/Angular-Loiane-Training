@@ -26,6 +26,8 @@ import { DiretivasComInputEPropertyBindingDirective } from './_03-diretivas/dire
 import { ComponentParaTestarDiretivaInputEPropertyBindingComponent } from './_03-diretivas/diretivas-com-input-e-propertyBinding/component-para-testar-diretiva-input-e-property-binding/component-para-testar-diretiva-input-e-property-binding.component';
 import { DiretivaDeEstruturaDirective } from './_03-diretivas/criando-diretiva-de-estrutura/diretiva/diretiva-de-estrutura.directive';
 import { ComponentParaTestarDiretivaDeEstruturaComponent } from './_03-diretivas/criando-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura.component';
+import { CursosComponent } from './_04-services/criacao-primeiro-service/cursos/cursos.component';
+import { PrimeiroService } from './_04-services/primeiro-service/primeiro-service.service';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -47,7 +49,8 @@ import { ComponentParaTestarDiretivaDeEstruturaComponent } from './_03-diretivas
     DiretivasComInputEPropertyBindingDirective, 
     ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
     DiretivaDeEstruturaDirective, 
-    ComponentParaTestarDiretivaDeEstruturaComponent,
+    ComponentParaTestarDiretivaDeEstruturaComponent, 
+    CursosComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
@@ -55,7 +58,7 @@ import { ComponentParaTestarDiretivaDeEstruturaComponent } from './_03-diretivas
     DataBindingModule,
     FormsModule
   ],
-  providers: [], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
+  providers: [PrimeiroService], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
   bootstrap: [AppComponent] // meta-dado presente somente no modulo raiz ou seja AppModule, aqui esta declarado o componente que deve ser instanciado ao executar a aplicação.
                             // OBS: como no angular 2 trabalhamos com o conceito de SPA (Single Page Application), aqui sera declarado o compoenente que servirá de container para a nossa aplicação.
 })
