@@ -8,7 +8,7 @@ Vamos tomar o exemplo onde desejamos exibir uma lista de itens, neste caso uma l
 </p>
 
 #
-## Implementacao sem a classe service
+## Implementacao sem classe service
 
 Template
 ```HTML

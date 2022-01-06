@@ -1,27 +1,38 @@
-# Angular Loiane Training Exemples
+# Angular Loiane Training
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.9.
+## Descricao
+Este repositorio contem [codigos](https://github.com/Trajy/Angular-Loiane-Training/tree/master/src/app) e [exemplos documentados](https://github.com/Trajy/Angular-Loiane-Training/tree/master/documents) estruturados de acordo com os modulos abordados no [curso de angular da loiane](https://loiane.training/curso/angular)
 
-## Development server
+Este projeto foi gerado a partir do [Angular CLI](https://github.com/angular/angular-cli) versao 12.2.9.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Stack Utilizada
+ - <img alt="angular 2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" height="20" wight="20"/> Angular 2 <br>
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="20" wight="20"/> Typescript <br>
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20" wight="20"/> HTML <br>
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20" wight="20"/> CSS <br>
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Servidor de Desenvolvimento
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+execute o comando `ng serve` para iniciar o servidor de desenvolvimento. Pode ser acessado por `http://localhost:4200/`. O mecanismo de live reload ira atualizar o servidor do projeto automaticamente caso ocorram modificacoes.
 
-## Running unit tests
+## Angular CLI
+
+Execute `ng generate component component-name` no terminal para gerar um novo component. Outros comandos uteis para geracao automatica sao `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build do projeto
+
+Execute `ng build` para fazer build do projeto. Os artefatos gerados serao armazenados no diretorio `dist/`.
+
+<!-- ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities. -->
 
-## Further help
+## Informacoes Adicionais
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ajuda sobre o Angular CLI pode ser obtida executando o comando `ng help` ou na pagina oficial [Angular CLI: comandos](https://angular.io/cli).
