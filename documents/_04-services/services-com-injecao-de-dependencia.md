@@ -50,7 +50,7 @@ import { PrimeiroService } from '../../primeiro-service/primeiro-service.service
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
-export class CursosComponent implements OnInit {
+export class CursosComponent implemWents OnInit {
 
   cursos: string[] = []
   cursosService: PrimeiroService
