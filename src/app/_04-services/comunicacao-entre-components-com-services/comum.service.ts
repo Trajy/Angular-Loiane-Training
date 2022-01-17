@@ -1,5 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 
+import { LogService } from './injetando-service-em-outro-service/log.service'
+
 @Injectable()
 export class ComumService {
 
@@ -9,7 +11,7 @@ export class ComumService {
 
   cursos: string[] = ['Angular', 'NodeJs']
 
-  constructor() { 
+  constructor(private logService: LogService) { 
     console.log('Instancia do Service')
   }
 
@@ -23,5 +25,7 @@ export class ComumService {
     // emitir curso criado
     // this.emitirCursoCriado.emit(curso)
     ComumService.emitirCursoCriadoEstatico.emit(curso)
+
+    this.logService.consoleLog(`Criando um novo curso ${curso}`)
   }
 }
