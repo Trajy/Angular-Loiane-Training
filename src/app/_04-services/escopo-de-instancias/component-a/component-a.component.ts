@@ -1,3 +1,4 @@
+import { CursosService } from './../../../_00-introducao/cursos/cursos.service';
 import { Component, OnInit } from '@angular/core';
 
 import { ServiceSingletonService } from '../service-singleton.service';
@@ -18,4 +19,7 @@ export class ComponentAComponent implements OnInit {
     this.cursos = this.cursosService.getCursos()
   }
 
+  onSalvarCurso(curso: string){
+    this.cursosService.addCurso(curso)
+  }
 }

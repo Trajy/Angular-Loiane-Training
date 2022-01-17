@@ -17,4 +17,8 @@ export class ComponentBComponent implements OnInit {
   ngOnInit(): void {
     this.cursos = this.cursosService.getCursos()
   }
+
+  onSalvarCurso(curso: string){
+    this.cursosService.addCurso(curso)
+  }
 }

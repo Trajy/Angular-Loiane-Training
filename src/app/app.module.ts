@@ -33,6 +33,9 @@ import { PrimeiroService } from './_04-services/primeiro-service/primeiro-servic
 import { ComponentAComponent } from './_04-services/escopo-de-instancias/component-a/component-a.component';
 import { ComponentBComponent } from './_04-services/escopo-de-instancias/component-b/component-b.component';
 import { ServiceSingletonService } from './_04-services/escopo-de-instancias/service-singleton.service';
+import { ComponentComunicacaoAComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/component-comunicacao-a.component';
+import { ComponentComunicacaoBComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-b/component-comunicacao-b.component';
+import { ReceberCursoComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/receber-curso/receber-curso.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -55,7 +58,7 @@ import { ServiceSingletonService } from './_04-services/escopo-de-instancias/ser
     ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
     DiretivaDeEstruturaDirective, 
     ComponentParaTestarDiretivaDeEstruturaComponent, 
-    CursosComponent,
+    CursosComponent, ComponentComunicacaoAComponent, ComponentComunicacaoBComponent, ReceberCursoComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
