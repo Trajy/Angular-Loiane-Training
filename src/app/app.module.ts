@@ -36,6 +36,7 @@ import { ServiceSingletonService } from './_04-services/escopo-de-instancias/ser
 import { ComponentComunicacaoAComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/component-comunicacao-a.component';
 import { ComponentComunicacaoBComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-b/component-comunicacao-b.component';
 import { ReceberCursoComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/receber-curso/receber-curso.component';
+import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usando-pipes-parametros-e-pipes-aninhados/usando-pipes-parametros-e-pipes-aninhados.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -58,7 +59,7 @@ import { ReceberCursoComponent } from './_04-services/comunicacao-entre-componen
     ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
     DiretivaDeEstruturaDirective, 
     ComponentParaTestarDiretivaDeEstruturaComponent, 
-    CursosComponent, ComponentComunicacaoAComponent, ComponentComunicacaoBComponent, ReceberCursoComponent,
+    CursosComponent, ComponentComunicacaoAComponent, ComponentComunicacaoBComponent, ReceberCursoComponent, UsandoPipesParametrosEPipesAninhadosComponent,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
