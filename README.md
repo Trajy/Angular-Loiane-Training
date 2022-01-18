@@ -5,22 +5,31 @@ Este repositorio contem [codigos](https://github.com/Trajy/Angular-Loiane-Traini
 
 Este projeto foi gerado a partir do [Angular CLI](https://github.com/angular/angular-cli) versao 12.2.9.
 
-## Stack Utilizada
+#
+## Stack
+#### IDE
+- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="20" wight="20"/> Visual Studio Code <br>
+#### Frameworks
  - <img alt="angular 2" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-plain.svg" height="20" wight="20"/> Angular 2 <br>
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="20" wight="20"/> Typescript <br>
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20" wight="20"/> HTML <br>
- - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20" wight="20"/> CSS <br>
+ - <img alt="Bootstrap" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-plain.svg" height="20" wight="20"/> Bootstrap <br>
+ #### Gerenciador de pacotes
+ - <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" height="20" wight="20"/> Node package manager<br>
+ #### Linguagens de Programacao
+ - <img alt="Typescript" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="20" wight="20"/> Typescript <br>
+ - <img alt="HTML" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="20" wight="20"/> HTML <br>
+ - <img alt="CSS" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="20" wight="20"/> CSS <br>
 
-
-
+#
 ## Servidor de Desenvolvimento
 
 execute o comando `ng serve` para iniciar o servidor de desenvolvimento. Pode ser acessado por `http://localhost:4200/`. O mecanismo de live reload ira atualizar o servidor do projeto automaticamente caso ocorram modificacoes.
 
+#
 ## Angular CLI
 
 Execute `ng generate component component-name` no terminal para gerar um novo component. Outros comandos uteis para geracao automatica sao `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+#
 ## Build do projeto
 
 Execute `ng build` para fazer build do projeto. Os artefatos gerados serao armazenados no diretorio `dist/`.
