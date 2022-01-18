@@ -2,6 +2,8 @@
 
 pipes sao filtros para realizar a formatacao de dados nos _templates_, existem diversos casos, vamos tomar alguns exemplos. para mais informacoes sobre pipes nativos do `Angular` consulte [angular commom packge](https://angular.io/api/common) na secao pipes.
 
+OBS: os pipes nativos fazem parte do commom package disponivel no java core, esta disponiveis por padrao no escopo global da aplicacao, para definir os escopos de pipes personalizados, devem ser declarados no meta-dado `declaratons` dos mudulos.
+
 vamos criar uma classe que contem um objeto livro que contem alguns atributos como, titulo, numero de paginas, rating, data de lancamento, preco, e aplicar alguns pipes para exibir o conteudo, a sixtaxe padrao e composta pelo char pipe (|) separando a variavel do pipe. 
 
 ___component___:
@@ -56,8 +58,12 @@ para aninhar os pipes basta separar por pipes, a ordem de execucao seguira a ord
 ___template_ do _component___
 ```HTML
 <p>Exemplos de Pipes</p>
+
+<!-- pipes aninhados -->
 <p>Titulo: {{ livro.titulo | uppercase | lowercase }}</p>
-<p>Preco {{ livro.preco | currency:'BRL':true }}</p>
+
+<!-- json pipe -->
+<p>Livro: {{ livro | json }}</p>
 ```
 
 note que no exemplo o titulo sera convertido para caixa-alta e depois para caixa-baixa.

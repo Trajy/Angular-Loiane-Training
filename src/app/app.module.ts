@@ -1,3 +1,4 @@
+import { CriandoUmPipeModule } from './_05-pipes/criando-um-pipe/criando-um-pipe.module';
 import { ComponentBModule } from './_04-services/escopo-de-instancias/component-b/component-b.module';
 import { ComponentAModule } from './_04-services/escopo-de-instancias/component-a/component-a.module';
 // O comando para gerar um módulo automaticamente no angular CLI é ng g m <nome-do-modulo> ou ng g module <nome-do-modulo>
@@ -29,10 +30,6 @@ import { ComponentParaTestarDiretivaInputEPropertyBindingComponent } from './_03
 import { DiretivaDeEstruturaDirective } from './_03-diretivas/criando-diretiva-de-estrutura/diretiva/diretiva-de-estrutura.directive';
 import { ComponentParaTestarDiretivaDeEstruturaComponent } from './_03-diretivas/criando-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura/component-para-testar-diretiva-de-estrutura.component';
 import { CursosComponent } from './_04-services/criacao-primeiro-service/cursos/cursos.component';
-import { PrimeiroService } from './_04-services/primeiro-service/primeiro-service.service';
-import { ComponentAComponent } from './_04-services/escopo-de-instancias/component-a/component-a.component';
-import { ComponentBComponent } from './_04-services/escopo-de-instancias/component-b/component-b.component';
-import { ServiceSingletonService } from './_04-services/escopo-de-instancias/service-singleton.service';
 import { ComponentComunicacaoAComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/component-comunicacao-a.component';
 import { ComponentComunicacaoBComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-b/component-comunicacao-b.component';
 import { ReceberCursoComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/receber-curso/receber-curso.component';
@@ -59,7 +56,11 @@ import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usand
     ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
     DiretivaDeEstruturaDirective, 
     ComponentParaTestarDiretivaDeEstruturaComponent, 
-    CursosComponent, ComponentComunicacaoAComponent, ComponentComunicacaoBComponent, ReceberCursoComponent, UsandoPipesParametrosEPipesAninhadosComponent,
+    CursosComponent, 
+    ComponentComunicacaoAComponent, 
+    ComponentComunicacaoBComponent, 
+    ReceberCursoComponent, 
+    UsandoPipesParametrosEPipesAninhadosComponent, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
@@ -68,6 +69,7 @@ import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usand
     FormsModule,
     ComponentAModule,
     ComponentBModule,
+    CriandoUmPipeModule,
   ],
   //providers: [PrimeiroService, ServiceSingletonService], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
   bootstrap: [AppComponent] // meta-dado presente somente no modulo raiz ou seja AppModule, aqui esta declarado o componente que deve ser instanciado ao executar a aplicação.
