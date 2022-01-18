@@ -20,3 +20,5 @@ export class UsandoPipesParametrosEPipesAninhadosComponent implements OnInit {
   ngOnInit(): void {
   }
 }
+
+

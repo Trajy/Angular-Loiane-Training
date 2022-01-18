@@ -1,6 +1,7 @@
 <p>Exemplos de Pipes</p>
-<p>Titulo: {{ livro.titulo | uppercase}}</p>
-<p>Numero de Paginas: {{ livro.numeroPaginas | number}}</p>
-<p>Classificacao: {{ livro.rating | number:'1.1-1'}}</p>
+<p>Titulo: {{ livro.titulo | uppercase | lowercase }}</p>
+<!--<p>Numero de Paginas: {{ livro.numeroPaginas | number }}</p>
+<p>Classificacao: {{ livro.rating | number:'1.1-1' }}</p>
 <p>Data de lancamento: {{ livro.dataLancamento | date:'dd/MM/yyyy' }}</p>
-<p>Preco {{ livro.preco | currency:'BRL':true}}</p>
+<p>Preco {{ livro.preco | currency:'BRL':true }}</p>-->
+<p>Livro: {{ livro | json }}</p>
