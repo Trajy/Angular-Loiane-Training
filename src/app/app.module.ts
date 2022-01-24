@@ -4,7 +4,7 @@ import { ComponentAModule } from './_04-services/escopo-de-instancias/component-
 // O comando para gerar um módulo automaticamente no angular CLI é ng g m <nome-do-modulo> ou ng g module <nome-do-modulo>
 // - this is the main application module
 
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
@@ -34,6 +34,10 @@ import { ComponentComunicacaoAComponent } from './_04-services/comunicacao-entre
 import { ComponentComunicacaoBComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-b/component-comunicacao-b.component';
 import { ReceberCursoComponent } from './_04-services/comunicacao-entre-components-com-services/component-comunicacao-a/receber-curso/receber-curso.component';
 import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usando-pipes-parametros-e-pipes-aninhados/usando-pipes-parametros-e-pipes-aninhados.component';
+import { PipePuroComponent } from './_05-pipes/criando-pipe-puro/pipe-puro/pipe-puro.component';
+import { PipePuroPipe } from './_05-pipes/criando-pipe-puro/pipe-puro.pipe';
+import { PipeImpuroPipe } from './_05-pipes/criando-pipe-impuro/pipe-impuro.pipe';
+import { PipeImpuroComponent } from './_05-pipes/criando-pipe-impuro/pipe-impuro/pipe-impuro.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -61,6 +65,8 @@ import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usand
     ComponentComunicacaoBComponent, 
     ReceberCursoComponent, 
     UsandoPipesParametrosEPipesAninhadosComponent, 
+    PipePuroComponent, 
+    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
@@ -71,7 +77,18 @@ import { UsandoPipesParametrosEPipesAninhadosComponent } from './_05-pipes/usand
     ComponentBModule,
     CriandoUmPipeModule,
   ],
-  //providers: [PrimeiroService, ServiceSingletonService], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
+  providers: [
+    // PrimeiroService, 
+    // ServiceSingletonService
+
+    // RETOMAR E RESOLVER INCOMPATIBILIDADE (AULA 45)
+    //{
+    //  provide: LOCALE_ID,
+    //  useValue: 'pt-PT'
+    //}
+
+
+  ], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
   bootstrap: [AppComponent] // meta-dado presente somente no modulo raiz ou seja AppModule, aqui esta declarado o componente que deve ser instanciado ao executar a aplicação.
                             // OBS: como no angular 2 trabalhamos com o conceito de SPA (Single Page Application), aqui sera declarado o compoenente que servirá de container para a nossa aplicação.
 })

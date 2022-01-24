@@ -1,0 +1,15 @@
+<div>
+    <h3>Pipe Impuro</h3>
+    <div>
+        <input #inputLivro>
+        <button (click)="addLivro(inputLivro.value)">Adicionar Livro</button>
+    </div>
+    <div>
+        <input [(ngModel)]="filtro">
+    </div>
+    <ul>
+        <li *ngFor="let livro of livros | filtroArrayImpuro:filtro">
+            - {{ livro }}
+        </li>
+    </ul>
+</div>
