@@ -39,6 +39,8 @@ import { PipePuroPipe } from './_05-pipes/criando-pipe-puro/pipe-puro.pipe';
 import { PipeImpuroPipe } from './_05-pipes/criando-pipe-impuro/pipe-impuro.pipe';
 import { PipeImpuroComponent } from './_05-pipes/criando-pipe-impuro/pipe-impuro/pipe-impuro.component';
 import { FiltroManeiraCorretaComponent } from './_05-pipes/maneira-correta-de-add-filtro-nos-projetos/filtro-maneira-correta/filtro-maneira-correta.component';
+import { PipeAsyncComponent } from './_05-pipes/pipe-async/pipe-async-component/pipe-async.component';
+import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -67,7 +69,7 @@ import { FiltroManeiraCorretaComponent } from './_05-pipes/maneira-correta-de-ad
     ReceberCursoComponent, 
     UsandoPipesParametrosEPipesAninhadosComponent, 
     PipePuroComponent, 
-    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, 
+    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
