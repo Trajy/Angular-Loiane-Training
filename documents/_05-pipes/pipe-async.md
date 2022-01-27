@@ -1,6 +1,6 @@
 # __PIPE ASYNC__
 
-Este pipe pode ser utilizado para renderizar elementos que dependem da saida de um valor que pode demorar para ser retornado, como exemplo o acesso ao banco de dados para retornar informacoes. Sao usados em conjunto com as interfaces `Promise` ou 
+Este pipe pode ser utilizado para renderizar elementos que dependem da saida de um valor que pode demorar para ser retornado, como exemplo o acesso ao banco de dados para retornar informacoes. Sao usados em conjunto com as interfaces `Promise` ou `Observable`
 
 ## __UTILIZANDO `PROMISE`__
 No primeiro exemplo, vamos utilizar a interface `Promise`. Vamos declarar uma variavel chamada `valorAsync` e utilizar a funcao `setTimeout()` para simular o tempo de resposta do servidor.
@@ -123,4 +123,4 @@ export class PipeAsyncComponent implements OnInit {
 
 o template mante-se inalterado.
 
-para mais informaceos sobre `observable` leia a documentacao oficial do Angular [The RxJS library](https://angular.io/guide/rx-library)
+para mais informacoes sobre `observable` leia a documentacao oficial do Angular [The RxJS library](https://angular.io/guide/rx-library)
