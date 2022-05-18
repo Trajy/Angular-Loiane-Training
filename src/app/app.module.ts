@@ -41,6 +41,9 @@ import { PipeImpuroComponent } from './_05-pipes/criando-pipe-impuro/pipe-impuro
 import { FiltroManeiraCorretaComponent } from './_05-pipes/maneira-correta-de-add-filtro-nos-projetos/filtro-maneira-correta/filtro-maneira-correta.component';
 import { PipeAsyncComponent } from './_05-pipes/pipe-async/pipe-async-component/pipe-async.component';
 import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
+import { HomeComponent } from './_06-rotas/rotas-simples/home/home.component';
+import { LoginComponent } from './_06-rotas/rotas-simples/login/login.component';
+import { ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -69,7 +72,7 @@ import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
     ReceberCursoComponent, 
     UsandoPipesParametrosEPipesAninhadosComponent, 
     PipePuroComponent, 
-    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, 
+    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, HomeComponent, LoginComponent, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     BrowserModule,
@@ -79,6 +82,7 @@ import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
     ComponentAModule,
     ComponentBModule,
     CriandoUmPipeModule,
+    ROUTING
   ],
   providers: [
     // PrimeiroService, 
