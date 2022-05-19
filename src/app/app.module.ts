@@ -44,6 +44,7 @@ import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
 import { HomeComponent } from './_06-rotas/rotas-simples/home/home.component';
 import { LoginComponent } from './_06-rotas/rotas-simples/login/login.component';
 import { ROUTING } from './app.routing';
+import { MaterializeModule } from 'angular2-materialize';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -75,6 +76,7 @@ import { ROUTING } from './app.routing';
     PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, HomeComponent, LoginComponent, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
+    MaterializeModule,
     BrowserModule,
     CursosModule, // import do modulo de cursos.module
     DataBindingModule,
@@ -82,7 +84,8 @@ import { ROUTING } from './app.routing';
     ComponentAModule,
     ComponentBModule,
     CriandoUmPipeModule,
-    ROUTING
+    ROUTING,
+    
   ],
   providers: [
     // PrimeiroService, 

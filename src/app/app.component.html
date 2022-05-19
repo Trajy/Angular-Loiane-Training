@@ -33,4 +33,16 @@
 <app-filtro-maneira-correta></app-filtro-maneira-correta>
 <app-pipe-async></app-pipe-async> -->
 
-<router-outlet></router-outlet>
+<!-- AULA 51 -->
+<nav>
+    <div class="nav-wrapper">
+        <a routerLink="" class="brand-logo right">Rotas Ng2</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/cursos">Cursos</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>
