@@ -41,10 +41,11 @@ import { PipeImpuroComponent } from './_05-pipes/criando-pipe-impuro/pipe-impuro
 import { FiltroManeiraCorretaComponent } from './_05-pipes/maneira-correta-de-add-filtro-nos-projetos/filtro-maneira-correta/filtro-maneira-correta.component';
 import { PipeAsyncComponent } from './_05-pipes/pipe-async/pipe-async-component/pipe-async.component';
 import { PipeAsyncPipe } from './_05-pipes/pipe-async/pipe-async.pipe';
-import { HomeComponent } from './_06-rotas/rotas-simples/home/home.component';
-import { LoginComponent } from './_06-rotas/rotas-simples/login/login.component';
+import { HomeComponent } from './_06-rotas/rotas/home/home.component';
+import { LoginComponent } from './_06-rotas/rotas/login/login.component';
 import { ROUTING } from './app.routing';
 import { MaterializeModule } from 'angular2-materialize';
+import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-detalhe.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -73,7 +74,7 @@ import { MaterializeModule } from 'angular2-materialize';
     ReceberCursoComponent, 
     UsandoPipesParametrosEPipesAninhadosComponent, 
     PipePuroComponent, 
-    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, HomeComponent, LoginComponent, 
+    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, HomeComponent, LoginComponent, CursoDetalheComponent, 
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     MaterializeModule,

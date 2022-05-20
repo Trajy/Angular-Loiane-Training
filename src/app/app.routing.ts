@@ -1,23 +1,17 @@
-
-import { HomeComponent } from './_06-rotas/rotas-simples/home/home.component';
-import { RouterModule, Routes } from "@angular/router";
-import { LoginComponent } from './_06-rotas/rotas-simples/login/login.component';
+import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import { CursosComponent } from './_06-rotas/rotas-simples/cursos/cursos.component';
+import { Routes } from '@angular/router';
+import { CursosComponent } from './_00-introducao/cursos/cursos.component';
+import { LoginComponent } from './_06-rotas/rotas/login/login.component';
+import { HomeComponent } from './_06-rotas/rotas/home/home.component';
+import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-detalhe.component';
+
 
 const APP_ROUTES: Routes = [
-    {
-        path: '',
-        component: HomeComponent
-    },
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'cursos',
-        component: CursosComponent
-    }
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'cursos', component: CursosComponent },
+    { path: 'cursos/:id', component: CursoDetalheComponent }
 ]
 
 export const ROUTING: ModuleWithProviders<RouterModule> = RouterModule.forRoot(APP_ROUTES);
