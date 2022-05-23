@@ -1,3 +1,4 @@
+import { CursosRotasComponent } from './_06-rotas/rotas/cursos/cursos.component';
 import { CriandoUmPipeModule } from './_05-pipes/criando-um-pipe/criando-um-pipe.module';
 import { ComponentBModule } from './_04-services/escopo-de-instancias/component-b/component-b.module';
 import { ComponentAModule } from './_04-services/escopo-de-instancias/component-a/component-a.module';
@@ -46,6 +47,7 @@ import { LoginComponent } from './_06-rotas/rotas/login/login.component';
 import { ROUTING } from './app.routing';
 import { MaterializeModule } from 'angular2-materialize';
 import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-detalhe.component';
+import { CursoNaoEncontradoComponent } from './_06-rotas/rotas/curso-nao-encontrado/curso-nao-encontrado.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
@@ -67,14 +69,25 @@ import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-det
     DiretivasComInputEPropertyBindingDirective, 
     ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
     DiretivaDeEstruturaDirective, 
-    ComponentParaTestarDiretivaDeEstruturaComponent, 
-    CursosComponent, 
+    ComponentParaTestarDiretivaDeEstruturaComponent,
+    CursosComponent,
+    CursosRotasComponent, 
     ComponentComunicacaoAComponent, 
     ComponentComunicacaoBComponent, 
     ReceberCursoComponent, 
     UsandoPipesParametrosEPipesAninhadosComponent, 
     PipePuroComponent, 
-    PipePuroPipe, PipeImpuroPipe, PipeImpuroComponent, FiltroManeiraCorretaComponent, PipeAsyncComponent, PipeAsyncPipe, HomeComponent, LoginComponent, CursoDetalheComponent, 
+    PipePuroPipe, 
+    PipeImpuroPipe, 
+    PipeImpuroComponent, 
+    FiltroManeiraCorretaComponent, 
+    PipeAsyncComponent, 
+    PipeAsyncPipe, 
+    HomeComponent, 
+    LoginComponent, 
+    CursoDetalheComponent,
+    CursosRotasComponent,
+    CursoNaoEncontradoComponent
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     MaterializeModule,
@@ -86,7 +99,6 @@ import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-det
     ComponentBModule,
     CriandoUmPipeModule,
     ROUTING,
-    
   ],
   providers: [
     // PrimeiroService, 
@@ -97,8 +109,6 @@ import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-det
     //  provide: LOCALE_ID,
     //  useValue: 'pt-PT'
     //}
-
-
   ], // meta-dado para declarar os serviços disponíveis aos componentes deste módulo, como esse é o AppModule (modulo pricipal), os serviçõs aqui declarados estaram disponíveis para toda a aplicação.
   bootstrap: [AppComponent] // meta-dado presente somente no modulo raiz ou seja AppModule, aqui esta declarado o componente que deve ser instanciado ao executar a aplicação.
                             // OBS: como no angular 2 trabalhamos com o conceito de SPA (Single Page Application), aqui sera declarado o compoenente que servirá de container para a nossa aplicação.
