@@ -12,11 +12,11 @@ um novo _component_ foi criado para este exemplo. Apenas para exemplificar como 
     <div class="nav-wrapper">
         <a routerLink="" class="brand-logo right">Rotas Ng2</a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
-        <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+          <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+          <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
 
-        <!-- nova rota inserida -->
-        <li routerLinkActive="active"><a [routerLink]="['curso', id_curso.value]">Cursos com Id</a></li>
+          <!-- nova rota inserida -->
+          <li routerLinkActive="active"><a [routerLink]="['curso', id_curso.value]">Cursos com Id</a></li>
         </ul>
     </div>
 </nav>
@@ -68,4 +68,12 @@ no HTML do `CursoDetalheComponent` temos apenas uma interpolacao para exibir o v
 ### Exemplo
 <p align="center">
     <img src="img/rotas-com-parametros.gif"><br>
+</p>
+
+## Problema
+
+O captura dos dados pelo atributo `snapshot` da classe `ActivatedRoute` ocorre posteriormente a renderizacao do _component_, ou seja, no caso deste exemplo ao alterar o valor do campo input e mudar de rota o valor atribuito ao parametro `id` permanece o mesmo pois sera necessario renderizar novamente o _component_ com o valor antigo do atributo, e ao fim da renderizacao o novo valor e atribuido, e para que o novo valor seja visivel, deve-se renderizar novamente.
+
+<p align="center">
+    <img src="img/mudanca-rotas.gif"><br>
 </p>
