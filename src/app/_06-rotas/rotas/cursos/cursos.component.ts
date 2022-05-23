@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { CursosServiceService } from './cursos-service.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,13 +6,16 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
-export class CursosComponent implements OnInit {
+export class CursosRotasComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {  
-    console.log(this.route)
+  cursos: any
+
+  constructor(private _service: CursosServiceService) {
+
   }
 
   ngOnInit(): void {
+    this.cursos = this._service.getCursos()
   }
 
 }

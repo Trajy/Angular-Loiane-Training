@@ -1,4 +1,4 @@
-# Escutando mudancas nos parametros de rotemanto
+# Escutando mudancas nos parametros de rotemento
 
 utilizando o exemplo [Definindo e Extraindo Parametros de Roteamento](_05-definindo-e-extraindo-parametros-de-roteamento.md), alem do atributo `snapshot` outro atributo de interesse neste momento e o atributo `params` que possui o objeto `BehaviorSubject` do pacote `rxjs` que muda dinamicamente conforme as alteracoes na rota, deste modo e possivel se inscrever neste objeto para escutar alteracoes utilizando o metodo `subject()`.
 
