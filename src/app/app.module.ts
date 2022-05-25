@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing.module';
 import { CursosRotasComponent } from './_06-rotas/rotas/cursos/cursos.component';
 import { CriandoUmPipeModule } from './_05-pipes/criando-um-pipe/criando-um-pipe.module';
 import { ComponentBModule } from './_04-services/escopo-de-instancias/component-b/component-b.module';
@@ -98,7 +99,8 @@ import { CursoNaoEncontradoComponent } from './_06-rotas/rotas/curso-nao-encontr
     ComponentAModule,
     ComponentBModule,
     CriandoUmPipeModule,
-    ROUTING,
+    // ROUTING,
+    AppRoutingModule
   ],
   providers: [
     // PrimeiroService, 
