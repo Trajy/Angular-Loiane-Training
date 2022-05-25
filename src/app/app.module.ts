@@ -1,3 +1,4 @@
+import { RotasModule } from './_06-rotas/rotas.module';
 import { AppRoutingModule } from './app.routing.module';
 import { CursosRotasComponent } from './_06-rotas/rotas/cursos/cursos.component';
 import { CriandoUmPipeModule } from './_05-pipes/criando-um-pipe/criando-um-pipe.module';
@@ -47,48 +48,42 @@ import { HomeComponent } from './_06-rotas/rotas/home/home.component';
 import { LoginComponent } from './_06-rotas/rotas/login/login.component';
 import { ROUTING } from './app.routing';
 import { MaterializeModule } from 'angular2-materialize';
-import { CursoDetalheComponent } from './_06-rotas/rotas/curso-detalhe/curso-detalhe.component';
-import { CursoNaoEncontradoComponent } from './_06-rotas/rotas/curso-nao-encontrado/curso-nao-encontrado.component';
+import { CursoDetalheComponent } from './_06-rotas/rotas/cursos/curso-detalhe/curso-detalhe.component';
+import { CursoNaoEncontradoComponent } from './_06-rotas/rotas/cursos/curso-nao-encontrado/curso-nao-encontrado.component';
 
 @NgModule({
   declarations: [ // meta-dado para declarar componentes, diretivas e pipes.
     AppComponent,
     MyFirstComponent, // declaração da classe MyFisrtCompoenet no módulo.
-    ComponentCreatingAutomaticallyComponent, // auto-update from automatic component create. 
+    ComponentCreatingAutomaticallyComponent, // auto-update from automatic component create.
     CicloDeVidaComponent,   // para exemplificar outra forma de relacionar os modulos aos componentes, o component ciclo-de-vida nao possui um modulo e foi declaro diretamento no app.modulo (modulo raiz).
-    DiretivaNgIfComponent, 
-    DiretivaNgSwitchComponent, 
-    DiretivaNgForComponent, 
-    DiretivaNgClassComponent, 
-    DiretivaNgStyleComponent, 
-    ElvisOperatorComponent, 
-    NgContentExempleComponent, 
-    FundoAmareloDirective, 
-    DiretivasCustomizadasComponent, 
-    HighLightMouseDirective, 
-    ComponentParaTestarDiretivaComponent, 
-    DiretivasComInputEPropertyBindingDirective, 
-    ComponentParaTestarDiretivaInputEPropertyBindingComponent, 
-    DiretivaDeEstruturaDirective, 
+    DiretivaNgIfComponent,
+    DiretivaNgSwitchComponent,
+    DiretivaNgForComponent,
+    DiretivaNgClassComponent,
+    DiretivaNgStyleComponent,
+    ElvisOperatorComponent,
+    NgContentExempleComponent,
+    FundoAmareloDirective,
+    DiretivasCustomizadasComponent,
+    HighLightMouseDirective,
+    ComponentParaTestarDiretivaComponent,
+    DiretivasComInputEPropertyBindingDirective,
+    ComponentParaTestarDiretivaInputEPropertyBindingComponent,
+    DiretivaDeEstruturaDirective,
     ComponentParaTestarDiretivaDeEstruturaComponent,
     CursosComponent,
-    CursosRotasComponent, 
-    ComponentComunicacaoAComponent, 
-    ComponentComunicacaoBComponent, 
-    ReceberCursoComponent, 
-    UsandoPipesParametrosEPipesAninhadosComponent, 
-    PipePuroComponent, 
-    PipePuroPipe, 
-    PipeImpuroPipe, 
-    PipeImpuroComponent, 
-    FiltroManeiraCorretaComponent, 
-    PipeAsyncComponent, 
-    PipeAsyncPipe, 
-    HomeComponent, 
-    LoginComponent, 
-    CursoDetalheComponent,
-    CursosRotasComponent,
-    CursoNaoEncontradoComponent
+    ComponentComunicacaoAComponent,
+    ComponentComunicacaoBComponent,
+    ReceberCursoComponent,
+    UsandoPipesParametrosEPipesAninhadosComponent,
+    PipePuroComponent,
+    PipePuroPipe,
+    PipeImpuroPipe,
+    PipeImpuroComponent,
+    FiltroManeiraCorretaComponent,
+    PipeAsyncComponent,
+    PipeAsyncPipe,
   ],
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     MaterializeModule,
@@ -100,10 +95,11 @@ import { CursoNaoEncontradoComponent } from './_06-rotas/rotas/curso-nao-encontr
     ComponentBModule,
     CriandoUmPipeModule,
     // ROUTING,
-    AppRoutingModule
+    RotasModule,
+    AppRoutingModule,
   ],
   providers: [
-    // PrimeiroService, 
+    // PrimeiroService,
     // ServiceSingletonService
 
     // RETOMAR E RESOLVER INCOMPATIBILIDADE (AULA 45)

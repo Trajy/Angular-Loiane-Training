@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CursosRotasComponent implements OnInit {
 
   cursos: any
-  pagina: number = 1
+  pagina: number = 0
   inscricao: Subscription
 
   constructor(
