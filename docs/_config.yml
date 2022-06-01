@@ -1,1 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-architect
+relative_links:
+  enabled:     true
+  collections: false
