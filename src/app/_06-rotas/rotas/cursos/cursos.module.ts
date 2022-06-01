@@ -1,3 +1,4 @@
+import { CursosRoutingModule } from './cursos.routing.module';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
@@ -14,7 +15,7 @@ import { CursosRotasComponent } from './cursos.component';
     ],
     imports: [
       CommonModule, // possui as diretivas ngIf ngFor, validaceos e etc.
-      RouterModule
+      CursosRoutingModule
     ],
     exports: [],
     providers:[CursosServiceService]

@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 import { CursosRotasComponent } from './cursos.component';
@@ -12,6 +13,9 @@ const CURSOS_ROUTES: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forChild(CURSOS_ROUTES)],
+  imports: [
+    RouterModule.forChild(CURSOS_ROUTES),
+  ],
+  exports: [ RouterModule ]
 })
 export class CursosRoutingModule {}
