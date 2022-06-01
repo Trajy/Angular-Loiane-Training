@@ -5,4 +5,4 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - _06-rotas/_00-index.md
+  - _00-index.md
