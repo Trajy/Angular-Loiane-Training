@@ -6,3 +6,4 @@
 ## [Services](_04-services/_00-index.md)
 ## [Pipes](_05-pipes/_00-index.md)
 ## [Rotas](_06-rotas/_00-index.md)
+## <a href="_06-rotas/_00-index.md">Teste</a>
