@@ -101,7 +101,7 @@ os demais components, nao foram alterados.
 
 <p align="center">
     <img src="img/rotas-filhas.gif"><br>
-    exemplo de URL com _query params_.
+    exemplo de rotas filhas.
 </p>
 
 
