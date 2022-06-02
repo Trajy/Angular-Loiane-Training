@@ -1,0 +1,7 @@
+## [Utilizando Pipes, Parametros e Pipes Aninhados](01-usando-pipes-parametros-e-pipes-aninhados.md)
+## [Criando um Pipe](02-criando-um-pipe.md)
+## [Alicando Locale](03-aplicando-locale.md)
+## [Criando Pipe Impuro](04-criando-pipe-impuro.md)
+## [Criando Pipe Puro](05-criando-pipe-puro.md)
+## [Pipe Async](06-pipe-async.md)
+## [Maneira Correta de Adicionar Filtro nos Projetos](07-maneira-correta-de-adicionar-filtro-nos-projetos.md)

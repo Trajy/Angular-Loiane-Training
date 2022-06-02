@@ -1,9 +1,9 @@
 
-## [Introducao](_00-introducao/_00-index.md)
-## [Data Binding](_01-data-binding/_00-index.md)
-## [Angular CLI](_02-angular-cli/_00-index.md)
-## [Diretivas](_03-diretivas/_00-index.md)
-## [Services](_04-services/_00-index.md)
-## [Pipes](_05-pipes/_00-index.md)
+## [Introducao](00-introducao/00-index.md)
+## [Data Binding](01-data-binding/00-index.md)
+## [Angular CLI](02-angular-cli/00-index.md)
+## [Diretivas](03-diretivas/00-index.md)
+## [Services](04-services/00-index.md)
+## [Pipes](05-pipes/00-index.md)
 ## [Rotas](06-rotas/00-index.md)
 ## <a href="_06-rotas/_00-index.md">Teste</a>
