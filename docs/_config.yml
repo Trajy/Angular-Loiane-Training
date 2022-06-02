@@ -5,4 +5,3 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - _00-index.md
