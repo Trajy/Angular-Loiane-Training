@@ -5,7 +5,7 @@
 ## [Definindo e Extraindo Parametros de Roteamento](05-definindo-e-extraindo-parametros-de-roteamento.md)
 ## [Escutando Mudancas nos Patrametros de Roteamento](06-Escutando-mudancas-nos-parametros-de-roteamento.md)
 ## [Rotas Imperativas e Redirecionamento Via Codigo](07-rotas-imperativas-redirecionamento-via-codigo.md)
-## [Definindo e Extraindo Parametros de Filtro (QueryParams))](08-rotas-definindo-e-extraindo-parametros-url(query-params).md)
+## [Definindo e Extraindo Parametros de Filtro (QueryParams)](08-rotas-definindo-e-extraindo-parametros-url-query-params.md)
 ## [Criacao Modulo de Rotas](09-criacao-modulo-rotas.md)
 ## [Criacao Modulo de Rotas de Funcionalidades](10-criacao-modulo-funcionalidades.md)
 ## [Rotas Filhas](12-rotas-filhas.md)
