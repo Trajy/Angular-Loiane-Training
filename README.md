@@ -1,8 +1,7 @@
 # Angular Loiane Training
 
 ## Descricao
-Este repositorio contem [codigos](https://github.com/Trajy/Angular-Loiane-Training/tree/master/src/app) e [exemplos documentados](https://github.com/Trajy/Angular-Loiane-Training/tree/master/documents) estruturados de acordo com os modulos abordados no [curso de angular da loiane](https://loiane.training/curso/angular)
-
+Este repositorio contem [codigos](https://github.com/Trajy/Angular-Loiane-Training/tree/master/src/app) e [exemplos documentados](https://trajy.github.io/Angular-Loiane-Training/) estruturados de acordo com os modulos abordados no [curso de angular da loiane](https://loiane.training/curso/angular)
 Este projeto foi gerado a partir do [Angular CLI](https://github.com/angular/angular-cli) versao 12.2.9.
 
 #
