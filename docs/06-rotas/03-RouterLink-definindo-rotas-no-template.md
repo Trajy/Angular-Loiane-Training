@@ -1,6 +1,6 @@
 # __Router Link - Definindo rotas no template__
 
-As rotas sao definidas diretamente no template html por meio da diretiva `routerLink` declarada nas tags. Para exemplificar vamos utilizar o framework de CSS, [Materialize](http://archives.materializecss.com/0.100.2/), para criar um [menu](http://archives.materializecss.com/0.100.2/navbar.html) e redirecionar para cada _compoenent_ por meio de um botao (lembrando que as rotas ja estao declaradas no conteudo do arquivo `app.routing.ts`, vide [CONFIGURANDO ROTAS SIMPLES](_02-configurando-rotas-simples.md)).
+As rotas sao definidas diretamente no template html por meio da diretiva `routerLink` declarada nas tags. Para exemplificar vamos utilizar o framework de CSS, [Materialize](http://archives.materializecss.com/0.100.2/), para criar um [menu](http://archives.materializecss.com/0.100.2/navbar.html) e redirecionar para cada _compoenent_ por meio de um botao (lembrando que as rotas ja estao declaradas no conteudo do arquivo `app.routing.ts`, vide [CONFIGURANDO ROTAS SIMPLES](02-configurando-rotas-simples.md)).
 
 ```HTML
 <nav>

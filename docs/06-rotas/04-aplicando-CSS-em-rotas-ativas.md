@@ -1,6 +1,6 @@
 # Aplicando CSS em rotas ativas
 
-A api de rodas to angular possui a diretiva `routerLinkActive`, aplica as classes passadas como valor para o component que estiver ativo, utilizando o exemplo do documento [Router Link - Definindo rotas no template](_03-RouterLink-definindo-rotas-no-template.md), basta adicionar a diretivas nas tags, conforme o exemplo
+A api de rodas to angular possui a diretiva `routerLinkActive`, aplica as classes passadas como valor para o component que estiver ativo, utilizando o exemplo do documento [Router Link - Definindo rotas no template](03-RouterLink-definindo-rotas-no-template.md), basta adicionar a diretivas nas tags, conforme o exemplo
 
 ```HTML
 <a routerLinkActive="active" routerLink="/login">Login</a>

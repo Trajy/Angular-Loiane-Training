@@ -18,7 +18,7 @@ export class LogService {
   }
 }
 ```
-retomando o exemplo implementado em [__Comunicacao entre components usando services (broadcasting)__ ](comunicacao-entre-components-com-services.md), podemos injetar a classe `LogService` na classe `ComumService` e chamar o metodo `consoleLog()` passando como argumento a mensagem desejada a ser exibida no console.
+retomando o exemplo implementado em [__Comunicacao entre components usando services (broadcasting)__ ](05-comunicacao-entre-components-com-services.md), podemos injetar a classe `LogService` na classe `ComumService` e chamar o metodo `consoleLog()` passando como argumento a mensagem desejada a ser exibida no console.
 
 ___service_ que ira receber a injecao de dependencia:__
 

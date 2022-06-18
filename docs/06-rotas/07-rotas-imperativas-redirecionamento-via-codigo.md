@@ -1,6 +1,6 @@
 # Rotas Imperativas: Redirecionamento via codigo.
 
-vamos aprimorar o codigo desenvolvido em [Escutando mudancas nos parametros de rotemento](_06-Escutando-mudancas-nos-parametros-de-roteamento.md), primeiro vamos criar uma classe de servico para alimentar nossos componentes (neste caso a classe apenas ira retornar um objeto com id`s e nomes de de cursos, para simular o retorno de dados de um API por exemplo).
+vamos aprimorar o codigo desenvolvido em [Escutando mudancas nos parametros de rotemento](06-Escutando-mudancas-nos-parametros-de-roteamento.md), primeiro vamos criar uma classe de servico para alimentar nossos componentes (neste caso a classe apenas ira retornar um objeto com id`s e nomes de de cursos, para simular o retorno de dados de um API por exemplo).
 
 - __classe de servico__
 

@@ -30,7 +30,7 @@ const APP_ROUTES: Routes = [
 export class AppRoutingModule {}
 ```
 
-note que foram mantidas as rotas declaradas no documento [Configurando Rotas Simples](_02-configurando-rotas-simples.md), no meta-dado `imports` e declarada a configuracao, ou seja `ModuleWithProviders` que e o retorno do metodo `forRoot()` e no meta-dado `exports` e decalra a classe `RouterModule`.
+note que foram mantidas as rotas declaradas no documento [Configurando Rotas Simples](02-configurando-rotas-simples.md), no meta-dado `imports` e declarada a configuracao, ou seja `ModuleWithProviders` que e o retorno do metodo `forRoot()` e no meta-dado `exports` e decalra a classe `RouterModule`.
 
 #
 ## Incluindo o modulo de rotas no modulo principal, `app.module.ts`

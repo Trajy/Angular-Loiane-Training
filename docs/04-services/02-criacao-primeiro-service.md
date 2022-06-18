@@ -144,7 +144,7 @@ export class CursosComponent implements OnInit {
 }
 ```
 
- podemos extender este exemplo para o caso onde o objeto Http2Server necessite receber um objeto do tipo HTMLElement, e assim por diante, aumentando a quantidade de dependencias entre as classes. ficaria muito complexo pois havera a necessidade de fornecer cada dependencia a sua assinatura correspondente, para resolver este problema os services do angular podem ser injetados, aplicando o conceito de [injecao de dependencia](services-com-injecao-de-dependencia.md).
+ podemos extender este exemplo para o caso onde o objeto Http2Server necessite receber um objeto do tipo HTMLElement, e assim por diante, aumentando a quantidade de dependencias entre as classes. ficaria muito complexo pois havera a necessidade de fornecer cada dependencia a sua assinatura correspondente, para resolver este problema os services do angular podem ser injetados, aplicando o conceito de [injecao de dependencia](03-services-com-injecao-de-dependencia.md).
 
 
 

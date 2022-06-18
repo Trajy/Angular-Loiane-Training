@@ -1,6 +1,6 @@
 # Criacao Modulo de Rotas de Funcionalidades
 
-A organizacao das rotas em modulos ocorre de forma similar ao documentado em [Criacao Modulo de Funcionalidades](_10-criacao-modulo-funcionalidades.md), vamos aproveitar a mesma estrutura de pastas e adicionar os modulos de rotas respectivos a cada modulo. note que `cursos.routing.module.ts` foi adicionado a estrutura.
+A organizacao das rotas em modulos ocorre de forma similar ao documentado em [Criacao Modulo de Funcionalidades](10-criacao-modulo-funcionalidades.md), vamos aproveitar a mesma estrutura de pastas e adicionar os modulos de rotas respectivos a cada modulo. note que `cursos.routing.module.ts` foi adicionado a estrutura.
 
 ```
 cursos

@@ -1,6 +1,6 @@
 # __MANEIRA CORRETA DE ADICIONAR FILTRO NOS PROJETOS__
 
-Como visto em [CRIANDO PIPES PUROS](criando-pipe-puro.md) e [CRIANDO PIPES IMPUROS](criando-pipe-impuro.md) os exemplos sao apenas para fins de aprendizado, em producao funcionalidades para filtrar arrays ou reorganizar elementos devem ser implementadas no codigo de _components_ ou _services_ por exemplo.
+Como visto em [CRIANDO PIPES PUROS](05-criando-pipe-puro.md) e [CRIANDO PIPES IMPUROS](04-criando-pipe-impuro.md) os exemplos sao apenas para fins de aprendizado, em producao funcionalidades para filtrar arrays ou reorganizar elementos devem ser implementadas no codigo de _components_ ou _services_ por exemplo.
 
 vamos tomar o mesmo exemplo, porem iremos implementar o filtro de livros diretamente no _component_, utilizando a mesma implementacao no pipe alterando apenas as referencias as variaveis para o escopo do _component_ no metodo `filtrarLivros()`.
 

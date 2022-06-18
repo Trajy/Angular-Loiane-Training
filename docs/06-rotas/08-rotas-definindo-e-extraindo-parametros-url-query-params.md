@@ -99,7 +99,7 @@ um botao no template HTML sera utilizado para chamar o metodo `proximaPagina()` 
 </p>
 
 #
-## Utilizando [navegacao imperativa](_07-rotas-imperativas-redirecionamento-via-codigo.md) com os _query params_
+## Utilizando [navegacao imperativa](07-rotas-imperativas-redirecionamento-via-codigo.md) com os _query params_
 
 vamos incluir a classe `Router` e utilizar o metodo `navigate`
 

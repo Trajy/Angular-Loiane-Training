@@ -1,8 +1,8 @@
 # __CRIANDO PIPE IMPURO__
 
-OBS: por questoes de performace o time do Angular recomenda que nao sejam implementados pipes para realizar a filtragem em arrays e ordenacao de elementos, iremos implemetar apenas a nivel de exemplo para entender o conceito, porem nao deve ser implementado em projetos em producao, implementar as funcionalidades citadas anteriormente deve-se declarar diretamente no codigo (vide [MANEIRA CORRETA DE ADICIONAR FILTRO NOS PROJETOS](maneira-correta-de-adicionar-filtro-nos-projetos.md)).
+OBS: por questoes de performace o time do Angular recomenda que nao sejam implementados pipes para realizar a filtragem em arrays e ordenacao de elementos, iremos implemetar apenas a nivel de exemplo para entender o conceito, porem nao deve ser implementado em projetos em producao, implementar as funcionalidades citadas anteriormente deve-se declarar diretamente no codigo (vide [MANEIRA CORRETA DE ADICIONAR FILTRO NOS PROJETOS](07-maneira-correta-de-adicionar-filtro-nos-projetos.md)).
 
-vamos criar um filtro para array similar ao exemplo visto em [CRIANDO UM PIPE PURO](criando-pipe-puro.md), e utilizar os conceitos de heranca para herdar a interface PipeTransform da classe pipe criada anteriormente.
+vamos criar um filtro para array similar ao exemplo visto em [CRIANDO UM PIPE PURO](05-criando-pipe-puro.md), e utilizar os conceitos de heranca para herdar a interface PipeTransform da classe pipe criada anteriormente.
 
 para tornar o pipe impuro, (para que ele escute as mudancas no argumento passado ao parametro), basta adcionar o meta-dado `pure` e setar como `false`, por padrao este meta-dado e setado como `true`.
 

@@ -1,6 +1,6 @@
 # __COMUNICACAO ENTRE COMPONENTS USANDO SERVICES (BROADCASTING)__ 
 
- Para fazer um comparativo vamos retomar o conceito de Input properties (decorator `@Input()`) utilizado para receber dados do _component_ pai no component filho e Output properties (decorator `@Output()`) utilizado para transmitir dados do component filho para o component pai. Porem no caso da utilizacao de classes que sao independentes entre si, (os _components_ nao possuem relacao de pai e filho e cada _component_ possui sua respectiva instancia da classe _service_, vide a documentacao sobre [Escopo de Instancias de Services](escopo-de-instancias.md)) utiliza-se classes _service_ para realizar a transmissao de dados entre _components_.
+ Para fazer um comparativo vamos retomar o conceito de Input properties (decorator `@Input()`) utilizado para receber dados do _component_ pai no component filho e Output properties (decorator `@Output()`) utilizado para transmitir dados do component filho para o component pai. Porem no caso da utilizacao de classes que sao independentes entre si, (os _components_ nao possuem relacao de pai e filho e cada _component_ possui sua respectiva instancia da classe _service_, vide a documentacao sobre [Escopo de Instancias de Services](04-escopo-de-instancias.md)) utiliza-se classes _service_ para realizar a transmissao de dados entre _components_.
 
  ___component_ A__:
 
