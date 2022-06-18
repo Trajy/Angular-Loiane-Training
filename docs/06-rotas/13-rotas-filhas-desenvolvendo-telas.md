@@ -1,10 +1,10 @@
-# Rotas Fihas: Desenvolvendo Telas
+# Rotas Filhas: Desenvolvendo Telas
 
-Vamos desenvolver as telas para os _components_ desenvolvidos na documentacao [Rotas Filhas](12-rotas-filhas.md) utilizando o [Materialize CSS](http://archives.materializecss.com/0.100.2/).
+Vamos desenvolver as telas para os _components_ criados na documentação [Rotas Filhas](12-rotas-filhas.md) utilizando o [Materialize CSS](http://archives.materializecss.com/0.100.2/).
 
 ## Dados Mockados
 
-para simular os dados oriundos de um back-end vamos criar uma classe de servico que sera nosso objeto Mock.
+Para simular os dados oriundos de um back-end vamos criar uma classe de serviço que sera nosso objeto Mock.
 
 - Classe Mock (AlunosService)
 
@@ -35,11 +35,11 @@ export class AlunosService {
 }
 ```
 
-Observe que temos 2 metodos, um para retornar todos os alunos (`getAlunos()`) e outro para retornar apenas um aluno (`getAluno(id)`) recebendo seu id como argumento.
+Observe que temos 2 métodos, um para retornar todos os alunos (`getAlunos()`) e outro para retornar apenas um aluno (`getAluno(id)`) recebendo seu id como argumento.
 
-OBS: como esta e uma classe Mock nenhum algoritmo para performace de busca foi implementado, pois sao apenas dados em pequenas quantidades, e a estrutura de repeticao `for` serve bem para este proposito.
+OBS: como esta e uma classe Mock nenhum algoritmo para performance de busca foi implementado, pois, sao apenas dados em pequenas quantidades, e a estrutura de repetição `for` serve bem para este proposito.
 
-IMPORTANTE: note que para este exemplo no decorator `@Injectable()` nao a um objeto com o atributo `providedIn: 'root'`, deste modo e necessario declarar a qual modulo esta classe de servico pertence, seguindo a estrutura do projeto deve ser declarada em `alunos.module.ts` no array `providers`, deste modo a classe Mock estara disponivel para todos os _compoenents_ declarados no modulo e todos os _components_ dos modulos que importarem o modulo `AlunosModule`.
+IMPORTANTE: note que para este exemplo no decorator `@Injectable()` não ha um objeto com o atributo `providedIn: 'root'`, deste modo e necessário declarar a qual modulo esta classe de serviço pertence, seguindo a estrutura do projeto deve ser declarada em `alunos.module.ts` no array `providers`, a classe Mock estará disponível para todos os _compoenents_ declarados no modulo e todos os _components_ dos módulos que importarem o modulo `AlunosModule`.
 
 ```typescript
 //...demais imports omitidos
@@ -63,7 +63,7 @@ export class AlunosModule { }
 
 ### Lista de Alunos
 
-Para recuperar os dados em `AlunosComponent` iremos injetar por injecao de dependencias do Angular no construtor e no metodo `ngOnInit()` aramazenar os dados mockados no atributo `alunos` da classe `AlunosComponent`.
+Para recuperar os dados em `AlunosComponent` iremos injetar por injeção de dependências do Angular no construtor, no método `ngOnInit()` aramazenar os dados mockados no atributo `alunos` da classe `AlunosComponent`.
 
 ```typescript
 import { AlunosService } from './alunos.service';
@@ -86,7 +86,7 @@ export class AlunosComponent implements OnInit {
 }
 ```
 
-no template HTML DOM irmos utilizar as lista da secao [Collections](http://archives.materializecss.com/0.100.2/collections.html) do Materialize CSS, utilizando a diretiva ngFor para renderizar os alunos obtidos no array `alunos` da _class_ `AlunosComponent`
+No template HTML DOM irmos utilizar a lista da seção [Collections](http://archives.materializecss.com/0.100.2/collections.html) do Materialize CSS, a diretiva ngFor ira renderizar os alunos obtidos no array `alunos` da _class_ `AlunosComponent`
 
 ```HTML
 <div class="row">
@@ -109,15 +109,15 @@ no template HTML DOM irmos utilizar as lista da secao [Collections](http://archi
 </div>
 ```
 
-note que no em `[routerLink]` nao e necessario passar o caminho `/alunos` pois por se tratar de um rota filha todos os argumentos de caminho passados para a url serao inseridos apos a rota do _component_ pai, logo basta passar o id do aluno desejado que a rota completa sera `/alunos/:id`, onde `:id` e o id do aluno desejado.
+Note que no em `[routerLink]` não e necessário passar o caminho `/alunos` pois por se tratar de uma rota filha todos os argumentos de caminho passados para a url serão inseridos apos a rota do _component_ pai, logo basta passar o id do aluno desejado que a rota completa sera `/alunos/:id`, onde `:id` e o id do aluno desejado.
 
-Importante: para o funcionamento correto do materialize CSS segundo o exemplo obtido em [Grid](http://archives.materializecss.com/0.100.2/grid.html) e importante que todo o contudo esteja no interior de uma `div` com a `class` `container`, esta classe esta como valor do atributo class em `app.component.html`, ou seja, emgloba toda a aplicacao. Neste exemplo a tela esta dividida ao meio entre a lista de alunos e as rotas filhas.
+Importante: para o funcionamento correto do materialize CSS segundo o exemplo obtido em [Grid](http://archives.materializecss.com/0.100.2/grid.html) e importante que todo o contudo esteja no interior de uma `div` com a `class` `container`, esta classe esta como valor do atributo class em `app.component.html`, ou seja, engloba toda a aplicação. Neste exemplo a tela esta dividida ao meio entre a lista de alunos e as rotas filhas.
 
 ### Rotas Filhas (AlunosDetalhe e AlunosForm)
 
 #### Alunos Detalhe
 
-na classe `AlunoDetalheComponent` tambem iremos utilizar um objeto Mock do tipo que foi criado no inicio deste documento, mas desta vez para obter os dados de um unico aluno, a classe `ActivatedRoute` do package `@angular/router` tambem sera utilizada para obter o id do aluno a partir dos parametros passados para a rota por meio do metodo `subscribe()` para obter o valor do parametro `id` e passa-lo como argumento ao metodo `getAluno(id)` e retornar os dados de um aluno especifico.
+Na classe `AlunoDetalheComponent` também iremos utilizar um objeto Mock do tipo que foi criado no inicio deste documento, mas desta vez para obter os dados de um único aluno, a classe `ActivatedRoute` do package `@angular/router` também sera utilizada para obter o id do aluno a partir dos parâmetros passados para a rota por meio do método `subscribe()` para obter o valor do parâmetro `id` e passa-lo como argumento ao método `getAluno(id)` e retornar os dados de um aluno especifico.
 
 ```typescript
 import { Subscription } from 'rxjs';
@@ -161,9 +161,9 @@ no DOM basta apenas exibir os valores recebidos por meio de interpolacao
 <p>E-mail: {{ aluno.email }} </p>
 ```
 
-### Formulario para adicao/edicao de alunos
+### Formulário para adição/edição de alunos
 
-Do mesmo modo que o `AlunoDetalheCompoenent` busca o objeto de um aluno com base em seu id, `AlunoFormComponent` tambem tera a mesma logica.
+Do mesmo modo que o `AlunoDetalheCompoenent` busca o objeto de um aluno com base em seu id, `AlunoFormComponent` também tera a mesma logica.
 
 ```typescript
 import { Subscription } from 'rxjs';
@@ -195,11 +195,12 @@ export class AlunosFormComponent implements OnInit {
 }
 ```
 
-no DOM os dados seram exibidos em um formulario modificado a partir dos modelos em [Forms](http://archives.materializecss.com/0.100.2/forms.html) do Materialize CSS. Utilizando a diretiva `ngModel` do angular para realizar o _two-way-data-binding_.
+No DOM os dados serão exibidos em um formulário modificado a partir dos modelos em [Forms](http://archives.materializecss.com/0.100.2/forms.html) do Materialize CSS. Utilizando a diretiva `ngModel` do angular para realizar o _two-way-data-binding_.
 
-IMPORTANTE: lembrese que para utilizar a diretiva `ngModel` o modulo `FormsModule`, deve ser importado no modulo que declara os _components_ que iram utilizar a diretiva.
+IMPORTANTE: lembre-se que para utilizar a diretiva `ngModel` o modulo `FormsModule`, deve ser importado no módulo que declara os _components_ que iram utilizar a diretiva.
 
 - modulo `AlunosModule`
+
 ```typescript
 //...demais imports omitidos
 import { FormsModule } from '@angular/forms';
@@ -248,11 +249,11 @@ export class AlunosModule { }
 </div>
 ```
 
-note que nao foi utilizada a tag `form`, este assunto sera abortado posteriormente, o Angular e inteligente para detectar forms, logo, podemos utilizar a tag `div` no lugar da tag `form`.
+Note que não foi utilizada a tag `form`, este assunto sera abortado posteriormente, o Angular e inteligente para detectar forms, logo, podemos utilizar a tag `div` no lugar da tag `form`.
 
-### Adicao do botao para editar no _component_ `AlunoDetalheComponent`
+### Adição do botão para editar no _component_ `AlunoDetalheComponent`
 
-para redirecionar para a `AlunoFormComponent` utilizatemos as rotas imperativas o metodo `btnEditarAluno()` que sera chamado por meio de um botao no DOM de `AlunoDetalheComponent`
+para redirecionar para a `AlunoFormComponent` utilizaremos as rotas imperativas o método `btnEditarAluno()` que sera chamado por meio de um botão no DOM de `AlunoDetalheComponent`
 
 - classe `AlunoDetalheComponent`
 
@@ -284,7 +285,7 @@ export class AlunoDetalheComponent implements OnInit {
 }
 ```
 
-- adicao do botao no DOM de `AlunoDetalheComponent`
+- adição do botão no DOM de `AlunoDetalheComponent`
 
 ```HTML
 <!-- codigo HTML omitido -->
