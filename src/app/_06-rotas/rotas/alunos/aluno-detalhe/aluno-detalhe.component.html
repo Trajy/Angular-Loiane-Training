@@ -1,2 +1,12 @@
-<p>aluno-detalhe works!</p>
-<router-outlet></router-outlet>
+<p>Detalhe Aluno</p>
+
+<p>Id: {{ aluno.id }}</p>
+<p>Nome: {{ aluno.nome }}</p>
+<p>E-mail: {{ aluno.email }} </p>
+
+<a
+  class="waves-effect waves-light btn"
+  (click)="btnEditarAluno()"
+>
+  Editar
+</a>

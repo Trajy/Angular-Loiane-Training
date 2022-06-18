@@ -7,5 +7,7 @@
 ## [Rotas Imperativas e Redirecionamento Via Codigo](07-rotas-imperativas-redirecionamento-via-codigo.md)
 ## [Definindo e Extraindo Parametros de Filtro (QueryParams)](08-rotas-definindo-e-extraindo-parametros-url-query-params.md)
 ## [Criacao Modulo de Rotas](09-criacao-modulo-rotas.md)
-## [Criacao Modulo de Rotas de Funcionalidades](10-criacao-modulo-funcionalidades.md)
+## [Criacao Modulo de Funcionalidades](10-criacao-modulo-funcionalidades.md)
+## [Criacao Modulo de Rotas de Funcionalidades](11-criacao-modulo-rotas-de-funcionalidade.md)
 ## [Rotas Filhas](12-rotas-filhas.md)
+## [Rotas Filhas - Desenvolvento Telas](13-rotas-filhas-desenvolvendo-telas.md)
