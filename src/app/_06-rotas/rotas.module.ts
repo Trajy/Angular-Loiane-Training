@@ -11,8 +11,8 @@ import { AlunosModule } from './rotas/alunos/alunos.module';
     LoginComponent,
   ],
   imports: [
-   CursosModule,
-   AlunosModule,
+  // CursosModule, // comentado, pois esta declarado no app.routing.module.ts para utilizar o Lazy Loading
+  // AlunosModule,
    RotasRoutingModule
   ],
 })

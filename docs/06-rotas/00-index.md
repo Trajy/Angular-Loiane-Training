@@ -11,3 +11,4 @@
 ## [Criacao Modulo de Rotas de Funcionalidades](11-criacao-modulo-rotas-de-funcionalidade.md)
 ## [Rotas Filhas](12-rotas-filhas.md)
 ## [Rotas Filhas - Desenvolvendo Telas](13-rotas-filhas-desenvolvendo-telas.md)
+## [Lazy Loading](14-lazy-loading.md)

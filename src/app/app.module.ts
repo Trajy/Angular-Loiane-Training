@@ -81,7 +81,7 @@ import { RotasModule } from './_06-rotas/rotas.module';
   imports: [ // meta-dado para declarar outros módulos, a fim de utilizar neste módulo ou nos componentes.
     MaterializeModule,
     BrowserModule,
-    CursosModule, // import do modulo de cursos.module
+    CursosModule, // import do modulo de cursos.module da secao 00-intriducao
     DataBindingModule,
     FormsModule,
     ComponentAModule,

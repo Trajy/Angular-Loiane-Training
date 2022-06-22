@@ -14,7 +14,7 @@ export class CursoDetalheComponent implements OnInit {
   inscricao: Subscription = new Subscription()
   curso: any;
 
-  constructor(private _route: ActivatedRoute, 
+  constructor(private _route: ActivatedRoute,
     private _router: Router,
     private _service: CursosServiceService) {
    }
@@ -26,7 +26,7 @@ export class CursoDetalheComponent implements OnInit {
 
         this.curso = this._service.getCurso(params['id'])
 
-        if(this.curso == null) this._router.navigate(['/nao-encontrado'])
+        if(this.curso == null) this._router.navigate(['/cursos/nao-encontrado'])
       }
     )
   }
