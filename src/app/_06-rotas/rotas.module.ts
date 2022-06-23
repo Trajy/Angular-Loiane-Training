@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { RotasRoutingModule } from './rotas.routing.module';
 import { NgModule } from "@angular/core";
 import { CursosModule } from './rotas/cursos/cursos.module';
@@ -13,7 +14,8 @@ import { AlunosModule } from './rotas/alunos/alunos.module';
   imports: [
   // CursosModule, // comentado, pois esta declarado no app.routing.module.ts para utilizar o Lazy Loading
   // AlunosModule,
-   RotasRoutingModule
+    FormsModule,
+    RotasRoutingModule
   ],
 })
 export class RotasModule {}

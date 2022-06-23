@@ -1,3 +1,4 @@
+import { AuthService } from './_06-rotas/rotas/login/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,6 +11,17 @@ export class AppComponent {
 
   valorParaOCicloDeVida: number = 5 //variavel com valor passado ao app-ciclo-de-vida por meio do template app.component.html
   deletarCiclo: boolean = false
+
+  mostrarMenu: boolean = false
+
+  constructor(private authService: AuthService) { }
+
+  ngOnInit() {
+    this.authService.mostrarMenuEmitter.subscribe((mostrar => {
+      this.mostrarMenu = mostrar
+      console.log(mostrar)
+    }))
+  }
 
   mudarValor(){
     this.valorParaOCicloDeVida++
