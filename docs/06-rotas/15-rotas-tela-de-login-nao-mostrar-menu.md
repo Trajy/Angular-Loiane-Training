@@ -36,6 +36,7 @@ Neste exemplo vamos utilizar os campos de formulario disponiveis em [Forms](http
 os dados do formulario serao obtidos por meio da diretiva `ngModel` que realiza o _two way data binding_ entre o codigo typescript e HTML, e o botao chamara o metodo `fazerLogin()` que sera responsavel por implementar a chamada da camada de servico responsavel pela autenticacao do usuario.
 
 - login.component.ts
+
 ```typescript
 import { Usuario } from './usuario.model';
 import { AuthService } from './auth.service';
@@ -66,6 +67,7 @@ export class LoginComponent implements OnInit {
 Para trabalhar com os dados referentes a autenticacao iremos trabalhar com uma classe de Mock (simulando um service) e criar uma classe `Usuario` que servira como modelo de dados.
 
 - auth.service.ts (classe que contem dados mocados)
+
 ```typescript
 import { Router } from '@angular/router';
 import { Usuario } from './usuario.model';
@@ -93,6 +95,7 @@ export class AuthService {
 ```
 
 - usuario.model.ts (modelo de dados)
+
 ```typescript
 export class Usuario {
   nome: string
