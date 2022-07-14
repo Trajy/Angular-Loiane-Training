@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './rotas/home/home.component';
 import { LoginComponent } from './rotas/login/login.component';
 
 const ROTAS_ROUTES: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
 ]
 
