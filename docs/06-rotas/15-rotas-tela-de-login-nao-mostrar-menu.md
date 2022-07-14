@@ -118,7 +118,7 @@ Existem diversas formas de implementar esta logica
 vamos implementar a logica mais simples, utilizando o ngIf, para isto vamos utilizar um `EventEmitter` na class `AuthService`
 
 ```typescript
-i//...demais imports omitidos
+//...demais imports omitidos
 import { Injectable, EventEmitter } from '@angular/core';
 
 //...decorator @Injectable omitido
