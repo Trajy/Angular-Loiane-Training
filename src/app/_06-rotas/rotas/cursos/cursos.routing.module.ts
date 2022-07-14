@@ -1,8 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+import { RouterModule, Routes } from '@angular/router';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 import { CursosRotasComponent } from './cursos.component';
-import { Routes, RouterModule } from '@angular/router';
 
 import { NgModule } from "@angular/core";
 
