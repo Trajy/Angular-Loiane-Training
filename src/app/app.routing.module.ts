@@ -1,3 +1,4 @@
+import { AlunosGuard } from './_06-rotas/guards/alunos.guard';
 import { AuthGuard } from './_06-rotas/guards/auth.guard';
 import { RotasRoutingModule } from './_06-rotas/rotas.routing.module';
 import { NgModule } from "@angular/core";
@@ -16,7 +17,8 @@ const APP_ROUTES: Routes = [
     loadChildren: () =>
       import('./_06-rotas/rotas/alunos/alunos.module').
       then(mod => mod.AlunosModule),
-      canActivate: [AuthGuard]
+      canActivate: [AuthGuard],
+      canActivateChild: [AlunosGuard]
   }
 ]
 
