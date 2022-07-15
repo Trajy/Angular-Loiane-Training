@@ -1,8 +1,9 @@
+import { AlunosDeactivateGuard } from './_06-rotas/guards/alunos-deactivate.guard';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from '@angular/router';
 import { AlunosGuard } from './_06-rotas/guards/alunos.guard';
 import { AuthGuard } from './_06-rotas/guards/auth.guard';
 import { RotasRoutingModule } from './_06-rotas/rotas.routing.module';
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from '@angular/router';
 
 const APP_ROUTES: Routes = [
   {
@@ -18,7 +19,8 @@ const APP_ROUTES: Routes = [
       import('./_06-rotas/rotas/alunos/alunos.module').
       then(mod => mod.AlunosModule),
       canActivate: [AuthGuard],
-      canActivateChild: [AlunosGuard]
+      canActivateChild: [AlunosGuard],
+      canDeactivate: [AlunosDeactivateGuard]
   }
 ]
 
