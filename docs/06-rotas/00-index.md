@@ -14,3 +14,4 @@
 ## [Lazy Loading](14-lazy-loading.md)
 ## [Tela de Login: Não Mostrar Menu](15-rotas-tela-de-login-nao-mostrar-menu.md)
 ## [Guarda Rotas: CanActivate](16-guarda-rotas-canactivate.md)
+## [Guarda Rotas: CanActivateChield](17-guarda-rotas-canactivatechield.md)
