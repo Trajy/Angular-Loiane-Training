@@ -74,5 +74,5 @@ OBS: as rotas filhas tambem passam pela verificacao do guarda rotas.
 
 <p align="center">
     <img src="img/guarda-rotas-canactivate.gif"><br>
-    guarda rotas CanActivate.
+    guarda rotas CanActivate e CanActivateChield.
 </p>

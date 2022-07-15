@@ -1,8 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AlunosGuard } from './alunos.guard.service';
+import { AlunosGuard } from './alunos.guard';
 
-describe('Alunos.GuardService', () => {
+describe('AlunosGuard', () => {
   let service: AlunosGuard;
 
   beforeEach(() => {
