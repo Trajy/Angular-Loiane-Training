@@ -1,6 +1,6 @@
 # Guarda Rotas: CanActivateChield
 
-De forma similar ao [`CanActivate`](16-guarda-rotas-canactivate.md) o `CanActivateChield` tambem e uma classe que necessita que seu motodo `canActivateChield` seja implementado, porem neste caso o guarda rotas ira verificar cada nova chamada entre as rotas filhas.
+De forma similar ao [`CanActivate`](16-guarda-rotas-canactivate.md) o `CanActivateChield` tambem e uma interface que necessita que seu motodo `canActivateChield` seja implementado, porem neste caso o guarda rotas ira verificar cada nova chamada entre as rotas filhas.
 
 Vamos tomar como exemplo `AlunosComponent` que possui a rota `/alunos` e as seguintes rotas filhas `/novo`, `/:id`, `:id/editar`.
 
