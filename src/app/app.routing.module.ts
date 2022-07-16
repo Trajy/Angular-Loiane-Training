@@ -20,7 +20,6 @@ const APP_ROUTES: Routes = [
       then(mod => mod.AlunosModule),
       canActivate: [AuthGuard],
       canActivateChild: [AlunosGuard],
-      canDeactivate: [AlunosDeactivateGuard]
   }
 ]
 

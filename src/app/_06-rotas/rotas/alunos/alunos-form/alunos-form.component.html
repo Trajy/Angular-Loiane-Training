@@ -13,13 +13,13 @@
   <div class="row">
     <div class="col s12">
       <label for="nome" class="active">Nome</label>
-      <input id="nome" [(ngModel)]="aluno.nome" type="text">
+      <input id="nome" [(ngModel)]="aluno.nome" type="text" (input)="mudou=false">
     </div>
   </div>
   <div class="row">
     <div class="col s12">
       <label for="email">Email</label>
-      <input id="email" [(ngModel)]="aluno.email" type="email">
+      <input id="email" [(ngModel)]="aluno.email" type="email" (input)="mudou=false">
     </div>
   </div>
 </div>
