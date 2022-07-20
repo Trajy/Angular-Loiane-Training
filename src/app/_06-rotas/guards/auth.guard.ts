@@ -12,7 +12,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
     if(this._authService.usuarioAutenticado) {
-      console.log('guarda rotas pai')
+      //console.log('guarda rotas pai')
       return true
     }
     this._router.navigate(['/login'])
