@@ -1,3 +1,4 @@
+import { AlunoModel } from './../aluno.model';
 import { Subscription } from 'rxjs';
 import { AlunosService } from './../alunos.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlunoDetalheComponent implements OnInit {
 
-  public aluno: any
+  public aluno: AlunoModel
   private inscricao: Subscription
 
   constructor(
@@ -18,14 +19,22 @@ export class AlunoDetalheComponent implements OnInit {
     private _router: Router,
     private _service: AlunosService
 
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
+    /* codigo nao utilizado, pois o guarda rotas resolver ira carregar
+    as antes da renderizacao do component */
 
-    this.inscricao = this._route.params.subscribe((params: any) => {
+    /* this.inscricao = this._route.params.subscribe((params: any) => {
       let id = params['id']
       this.aluno = this._service.getAluno(id)
-    })
+    }) */
+
+    console.log('ngOnInit') // metodo para observar no console
+
+
+    this._route.data.subscribe((x) => this.aluno = x.aluno)
   }
 
   ngOnDestroy() {

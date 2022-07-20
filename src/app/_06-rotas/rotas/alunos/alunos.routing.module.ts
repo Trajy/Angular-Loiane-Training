@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AlunoDetalheComponent } from './aluno-detalhe/aluno-detalhe.component';
 import { AlunosFormComponent } from './alunos-form/alunos-form.component';
 import { AlunosComponent } from './alunos.component';
+import { AlunoDetalheResolver } from '../../guards/aluno-detalhe.resolver';
 
 const ALUNOS_ROUTES: Routes = [
   {
@@ -11,7 +12,7 @@ const ALUNOS_ROUTES: Routes = [
     component: AlunosComponent,
     children: [
       { path: 'novo', component:  AlunosFormComponent, canDeactivate: [AlunosDeactivateGuard]},
-      { path: ':id', component: AlunoDetalheComponent },
+      { path: ':id', component: AlunoDetalheComponent, resolve: { aluno: AlunoDetalheResolver }},
       { path: ':id/editar', component: AlunosFormComponent, canDeactivate: [AlunosDeactivateGuard]}
     ]
   },

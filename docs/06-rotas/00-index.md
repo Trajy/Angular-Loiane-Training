@@ -15,4 +15,6 @@
 ## [Tela de Login: Não Mostrar Menu](15-rotas-tela-de-login-nao-mostrar-menu.md)
 ## [Guarda Rotas: CanActivate](16-guarda-rotas-canactivate.md)
 ## [Guarda Rotas: CanActivateChield](17-guarda-rotas-canactivatechield.md)
-## [# Guarda Rotas: CanDeactivate](18-guarda-rotas-candeactivate.md)
+## [Guarda Rotas: CanDeactivate](18-guarda-rotas-candeactivate.md)
+## [Guarda Rotas: CanDeactive com Interface Generica](19-guarda-rotas-candeactivate-com-interface-generica.md)
+## [Guarda Rotas: Resolve](20-guarda-rotas-resolve.md)
