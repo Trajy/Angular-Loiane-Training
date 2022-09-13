@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './rotas/pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { FormsModule } from '@angular/forms';
 import { RotasRoutingModule } from './rotas.routing.module';
 import { NgModule } from "@angular/core";
@@ -10,12 +11,12 @@ import { AlunosModule } from './rotas/alunos/alunos.module';
   declarations: [
     HomeComponent,
     LoginComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
   // CursosModule, // comentado, pois esta declarado no app.routing.module.ts para utilizar o Lazy Loading
   // AlunosModule,
     FormsModule,
-    RotasRoutingModule
   ],
 })
 export class RotasModule {}

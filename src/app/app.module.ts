@@ -90,6 +90,7 @@ import { RotasModule } from './_06-rotas/rotas.module';
     // ROUTING,
     RotasModule,
     AppRoutingModule,
+
   ],
   providers: [
     // PrimeiroService,
