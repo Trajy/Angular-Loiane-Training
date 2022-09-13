@@ -11,7 +11,8 @@ const APP_ROUTES: Routes = [
     loadChildren: () =>
       import('./_06-rotas/rotas/cursos/cursos.module').
       then(mod => mod.CursosModule),
-      canActivate: [AuthGuard]
+      canActivate: [AuthGuard],
+      canLoad: [AuthGuard]
   },
   {
     path: 'alunos',
@@ -20,6 +21,7 @@ const APP_ROUTES: Routes = [
       then(mod => mod.AlunosModule),
       canActivate: [AuthGuard],
       canActivateChild: [AlunosGuard],
+      canLoad: [AuthGuard]
   }
 ]
 
