@@ -19,3 +19,5 @@
 ## [Guarda Rotas: CanDeactive com Interface Generica](19-guarda-rotas-candeactivate-com-interface-generica.md)
 ## [Guarda Rotas: Resolve](20-guarda-rotas-resolve.md)
 ## [Guarda Rotas: CanLoad](21-guarda-rotas-canload.md)
+## [Definindo Rota Padrao e Wildcard](22-definindo-rota-padrao-e-wild-card.md)
+## [Estilo de URL: padrao html5 ou utilizando #](23-estilo-de-url-html5-ou-utilizando-hashtag.md)
