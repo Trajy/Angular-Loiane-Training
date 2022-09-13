@@ -18,3 +18,4 @@
 ## [Guarda Rotas: CanDeactivate](18-guarda-rotas-candeactivate.md)
 ## [Guarda Rotas: CanDeactive com Interface Generica](19-guarda-rotas-candeactivate-com-interface-generica.md)
 ## [Guarda Rotas: Resolve](20-guarda-rotas-resolve.md)
+## [Guarda Rotas: CanLoad](21-guarda-rotas-canload.md)
