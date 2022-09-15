@@ -1,3 +1,4 @@
+import { FormsAngularModule } from './_07-formularios/forms-angular.module';
 // O comando para gerar um módulo automaticamente no angular CLI é ng g m <nome-do-modulo> ou ng g module <nome-do-modulo>
 // - this is the main application module
 import { NgModule } from '@angular/core';
@@ -90,7 +91,7 @@ import { RotasModule } from './_06-rotas/rotas.module';
     // ROUTING,
     RotasModule,
     AppRoutingModule,
-
+    FormsAngularModule
   ],
   providers: [
     // PrimeiroService,

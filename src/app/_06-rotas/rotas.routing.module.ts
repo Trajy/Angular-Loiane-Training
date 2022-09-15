@@ -9,7 +9,7 @@ const ROTAS_ROUTES: Routes = [
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', component: PaginaNaoEncontradaComponent }
+  //{ path: '**', component: PaginaNaoEncontradaComponent }
 ]
 
 @NgModule({

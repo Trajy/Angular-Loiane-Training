@@ -33,7 +33,9 @@
 <app-filtro-maneira-correta></app-filtro-maneira-correta>
 <app-pipe-async></app-pipe-async> -->
 
-<!-- AULA 51 -->
+
+<!-- modulo Rotas -->
+<!--
 <nav *ngIf="mostrarMenu">
     <div class="nav-wrapper">
         <a routerLink="" class="brand-logo right">Rotas Ng2</a>
@@ -41,13 +43,36 @@
         <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
         <li routerLinkActive="active"><a routerLink="">Home</a></li>
         <li routerLinkActive="active"><a routerLink="/cursos" [queryParams]="{pagina:1}">Cursos</a></li>
-        <!-- <li routerLinkActive="active"><a [routerLink]="['curso', ]">Cursos com Id</a></li> -->
+        -->
+        <!-- MANTER COMENTADO --><!-- <li routerLinkActive="active"><a [routerLink]="['curso', ]">Cursos com Id</a></li> -->
+        <!--
         <li routerLinkActive="active"><a routerLink='/alunos'>Alunos</a></li>
         </ul>
     </div>
 </nav>
 <div class="container">
-    <!-- <p>Entre com o id do curso</p>
+-->
+    <!--MANTER COMENTADO--><!-- <p>Entre com o id do curso</p>
     <input #id_curso> -->
+    <!--
     <router-outlet></router-outlet>
 </div>
+-->
+
+<!-- modulo Formularios -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="forms/template-driven">
+        Template Driven
+      </a>
+      <a class="navbar-brand" routerLink="forms/data-driven">
+        Data Driven
+      </a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+

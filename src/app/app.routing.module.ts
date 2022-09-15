@@ -1,3 +1,4 @@
+import { FormsAngularRoutingModule } from './_07-formularios/forms-angular.routing.module';
 import { AlunosDeactivateGuard } from './_06-rotas/guards/alunos-deactivate.guard';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
@@ -22,13 +23,19 @@ const APP_ROUTES: Routes = [
       canActivate: [AuthGuard],
       canActivateChild: [AlunosGuard],
       canLoad: [AuthGuard]
+  },
+  {
+    path: 'forms',
+    loadChildren: () =>
+      import('./_07-formularios/forms-angular.module').
+      then(mod => mod.FormsAngularModule),
   }
 ]
 
 @NgModule({
     imports: [
         RouterModule.forRoot(APP_ROUTES, { useHash: true }),
-        RotasRoutingModule
+        RotasRoutingModule,
     ],
     exports:[
         RouterModule
