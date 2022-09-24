@@ -2,8 +2,11 @@
   <div class="form-group">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" placeholder="Insira o nome" name="nome" [(ngModel)]="usuario.nome"
-        required
+        required #nome
       >
+      <div>
+        {{ nome.className }}
+      </div>
   </div>
   <div class="form-group">
     <label for="email">E-mail</label>
