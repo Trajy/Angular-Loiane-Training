@@ -2,3 +2,5 @@
 ## [Criacao Estrutura Inicial dos Formularios](02-criacao-projeto-inicial-com-bootstrap.md)
 ## [Controle: ngForm, ngSubmit, ngModel](03-controles-ngform-ngsubmit-ngmodel.md)
 ## [Inicializando Valores no Form com Two Way Data Binding](04-inicializando-valores-com-ngModel.md)
+## [Modulos e FormsModule](05-modulos-e-formsModule.md)
+## [Aplicando Validacao nos Campos](06-aplicando-validacoes-nos-campos.md)
