@@ -2,10 +2,12 @@
   <div class="form-group">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" placeholder="Insira o nome" name="nome" [(ngModel)]="usuario.nome"
-        required #nome
+        required
+        [class.has-error]="nome.touched && nome.invalid"
+        #nome="ngModel"
       >
-      <div>
-        {{ nome.className }}
+      <div *ngIf="nome.touched && nome.invalid" class="alert alert-danger">
+        O nome e obrigatorio
       </div>
   </div>
   <div class="form-group">
