@@ -12,4 +12,8 @@ export class TemplateDrivenFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public onSubmit(formulario: any): void {
+    console.log(formulario);
+  }
+
 }
