@@ -9,7 +9,7 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   usuario: any = {
     nome: "teste_nome",
-    email: "teste_email"
+    email: "teste_email@dominio.com"
   }
 
   constructor() { }

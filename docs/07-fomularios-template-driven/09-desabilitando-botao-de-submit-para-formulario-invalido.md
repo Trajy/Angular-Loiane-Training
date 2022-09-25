@@ -1,3 +1,8 @@
+# Desabilitando Botao de Submit para Formulario Invalido
+
+A variavel `formulario` declarada na tag `form` possui a propriedade `valid` que tera o valor `true` apenas se todos os campos do formulario forem validos. Neste caso podemos utilizar o valor da propriedade `valid` do formulario e passa-lo para o atributo `disabled` na tag `button`.
+
+```HTML
 <form #formulario="ngForm" (ngSubmit)="onSubmit(formulario)">
   <div class="form-group">
       <label for="nome">Nome</label>
@@ -18,3 +23,9 @@
 </div>
 <button type="submit" class="btn btn-primary" [disabled]="formulario.invalid">Submit</button>
 </form>
+```
+
+<p align="center"> 
+  <img src="img/desabilitando-botao-submit-para-form-invalido.gif"><br>
+    exibindo mensagens de erro.
+</p>
