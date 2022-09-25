@@ -27,5 +27,5 @@ A variavel `formulario` declarada na tag `form` possui a propriedade `valid` que
 
 <p align="center"> 
   <img src="img/desabilitando-botao-submit-para-form-invalido.gif"><br>
-    exibindo mensagens de erro.
+    desabilitando botao submit para formulario invalido.
 </p>

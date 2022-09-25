@@ -1,3 +1,4 @@
+import { FormDebugComponent } from './template-driven/form-debug/form-debug.component';
 import { FormsAngularRoutingModule } from './forms-angular.routing.module';
 import { TemplateDrivenFormComponent } from './template-driven/template-driven-form.component';
 import { NgModule } from "@angular/core";
@@ -8,7 +9,8 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     TemplateDrivenFormComponent,
-    DataDrivenFormComponent
+    DataDrivenFormComponent,
+    FormDebugComponent
   ],
   imports: [
     CommonModule,
