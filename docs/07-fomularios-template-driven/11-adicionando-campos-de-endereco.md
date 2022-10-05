@@ -1,3 +1,8 @@
+# Adicionando campos de endereco: form Layout Bootstrap 3
+
+Vamos adicionar novos campos ao formularios existente, utilizando o sistema de [_grid_](https://getbootstrap.com/docs/4.0/layout/grid) do [Bootstrap](https://getbootstrap.com/), ao utilizar a classe `form-horizontal` a tela e dividida em 12 colunas de espacos iguais, basta adicionar a quantidade de colunas que cada `div` (ou outra tag HTML) ira preencher dentro deste range, conforme o exemplo a seguir.
+
+```HTML
 <form
   #formulario="ngForm"
   class="form-horizontal"
@@ -135,3 +140,12 @@
   </button>
 </form>
 <app-form-debug [formulario]="formulario"></app-form-debug>
+
+```
+
+Note que para os campo de Cep e Numero sao delimitadas 3 divisoes para cada, ja para o campo Complemento 6 divisoes sao delimitadas completando a tela com 12 divisoes. os demais campos Rua, Bairro, Estado, Cidade seguem o mesmo raciocinio.
+
+<p align="center"> 
+  <img src="img/adicionando-campos-endereco-ao-form.png"><br>
+    adicionados campos de endereco ao formulario
+</p>
