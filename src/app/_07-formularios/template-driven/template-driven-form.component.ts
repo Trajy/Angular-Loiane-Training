@@ -22,4 +22,15 @@ export class TemplateDrivenFormComponent implements OnInit {
     console.log(this.usuario);
   }
 
+  public aplicaCssErro(campo: any) {
+    return {
+      'is-invalid': this.validaCampo(campo),
+      'has-feedback': this.validaCampo(campo)
+    }
+  }
+
+  public validaCampo(campo: any): boolean {
+    return campo.invalid && campo.touched
+  }
+
 }

@@ -1,3 +1,74 @@
+# Refatorando CSS e mensagens de erro
+
+Note que o codigo apresentado no documento [Adicionando campos de endereco: form Layout Bootstrap 3](./11-adicionando-campos-de-endereco.md) tornou-se extenso, podemos diminuir a quantidade de linhas fazendo o reaproveitamento de codigo, para isto iremos criar um novo component responsavel por exibir o erro e metodos para validar cada campo.
+
+inicialmente iremos declarar dois metodos para realizar a validacao dos campos no codigo typescript de nosso _component_
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-template-driven-form',
+  templateUrl: './template-driven-form.component.html',
+  styleUrls: ['./template-driven-form.component.css']
+})
+export class TemplateDrivenFormComponent implements OnInit {
+
+  usuario: any = {
+    nome: "teste_nome",
+    email: "teste_email@dominio.com"
+  }
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public onSubmit(formulario: any): void {
+    console.log(formulario);
+    console.log(this.usuario);
+  }
+
+  public aplicaCssErro(campo: any) {
+    return {
+      'is-invalid': this.validaCampo(campo),
+      'has-feedback': this.validaCampo(campo)
+    }
+  }
+
+  public validaCampo(campo: any): boolean {
+    return campo.invalid && campo.touched
+  }
+
+}
+```
+
+Em seguida criar um component com o template da mensagem de erro, que ira receber os argumentos respectivos a cada campo.
+
+```typescript
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-campo-erro',
+  templateUrl: './campo-erro.component.html',
+  styleUrls: ['./campo-erro.component.css']
+})
+export class CampoErroComponent {
+
+  @Input() mostrarErro: boolean;
+  @Input() mensagemErro: string;
+
+}
+```
+
+```HTML
+<div *ngIf="mostrarErro">
+  <div class="alert alert-danger" role="alert">{{ mensagemErro }}</div>
+</div>
+```
+Por fim a refatoracao do template do formulario
+
+```HTML
 <form #formulario="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(formulario)">
   <div class="form-group">
     <div class="col-sm-12">
@@ -54,3 +125,5 @@
   </button>
 </form>
 <app-form-debug [formulario]="formulario"></app-form-debug>
+```
+deste modo o codigo fica com maior legibilidade, e correcoes podem ser aplicadas uma unica vez.
