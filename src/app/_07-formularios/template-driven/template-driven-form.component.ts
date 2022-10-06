@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-template-driven-form',
@@ -19,7 +19,7 @@ export class TemplateDrivenFormComponent implements OnInit {
 
   public onSubmit(formulario: any): void {
     console.log(formulario);
-    console.log(this.usuario);
+    console.log(formulario.value);
   }
 
   public aplicaCssErro(campo: any) {

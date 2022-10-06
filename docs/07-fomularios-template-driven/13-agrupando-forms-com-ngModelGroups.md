@@ -1,3 +1,15 @@
+# Agrupando dados com ngModelGroup
+
+O form desenvolvido em [Refatorando CSS e mensagens de erro](./12-refatorando-css-e-mensagens-de-erro.md) possui todos os formularios no mesmo objeto, caso desejemos separar determinados campos como atributos de um unico objeto no form, podemo utilizar a diretiva `ngModelGroups`.
+
+observe a estrutura atual do form.
+
+<p align="center"> 
+  <img src="img/form-sem-ng-model-gorup.png"><br>
+    form sem ngModelGroup
+</p>
+
+```HTML
 <form #formulario="ngForm" class="form-horizontal" (ngSubmit)="onSubmit(formulario)">
   <div class="form-group">
     <div class="col-sm-12">
@@ -12,6 +24,7 @@
         name="email" [(ngModel)]="usuario.email" required email #email="ngModel" />
       <app-campo-erro [mostrarErro]="validaCampo(email)" mensagemErro="O campo email e obrigatorio"></app-campo-erro>
     </div>
+    <!--ngModelGroup adicionado-->
     <div ngModelGroup="endereco">
       <div class="col-md-3">
         <label for="cep" class="control-label">Cep</label>
@@ -59,3 +72,12 @@
   </button>
 </form>
 <app-form-debug [formulario]="formulario"></app-form-debug>
+
+```
+
+<p align="center"> 
+  <img src="img/adicionando-campos-endereco-ao-form.png"><br>
+    form com ngModelGroup
+</p>
+
+note que os campos foram aninhados dentro da estrutura do objeto `endereco`.
