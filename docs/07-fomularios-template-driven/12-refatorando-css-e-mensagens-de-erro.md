@@ -95,7 +95,7 @@ Por fim a refatoracao do template do formulario
     </div>
     <div class="col-md-6">
       <label for="complemento" class="control-label">Complemento</label>
-      <input type="text" class="form-control" id="complemento" name="complemento" ngModel required
+      <input type="text" class="form-control" id="complemento" name="complemento" ngModel
         #complemento="ngModel" />
     </div>
     <div class="col-md-12">
