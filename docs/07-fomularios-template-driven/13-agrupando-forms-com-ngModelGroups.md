@@ -28,7 +28,8 @@ observe a estrutura atual do form.
     <div ngModelGroup="endereco">
       <div class="col-md-3">
         <label for="cep" class="control-label">Cep</label>
-        <input type="text" class="form-control" id="cep" name="cep" ngModel required #cep="ngModel" />
+        <input type="text" class="form-control" id="cep" name="cep" ngModel required
+          (blur)="consultaCep($event.target.value)" #cep="ngModel" />
         <app-campo-erro [mostrarErro]="validaCampo(cep)" mensagemErro="O campo cep e obrigatorio"></app-campo-erro>
       </div>
       <div class="col-md-3">

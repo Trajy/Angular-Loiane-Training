@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { DataDrivenFormComponent } from './data-driven/data-driven-form/data-driven-form.component';
 import { CommonModule } from '@angular/common';
 import { CampoErroComponent } from './template-driven/campo-erro/campo-erro/campo-erro.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CampoErroComponent } from './template-driven/campo-erro/campo-erro/camp
   imports: [
     CommonModule,
     FormsModule,
-    FormsAngularRoutingModule
+    FormsAngularRoutingModule,
+    HttpClientModule
   ],
 })
 export class FormsAngularModule { }
