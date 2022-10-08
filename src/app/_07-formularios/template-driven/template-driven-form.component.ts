@@ -22,6 +22,8 @@ export class TemplateDrivenFormComponent implements OnInit {
   public onSubmit(formulario: any): void {
     console.log(formulario);
     console.log(formulario.value);
+    this.http.post('enderecoServidos/formUsuario', JSON.stringify(formulario.value))
+      .subscribe(response => console.log(response))
   }
 
   public aplicaCssErro(campo: any) {
