@@ -1,6 +1,7 @@
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-template-driven-form',
   templateUrl: './template-driven-form.component.html',
@@ -34,17 +35,30 @@ export class TemplateDrivenFormComponent implements OnInit {
     return campo.invalid && campo.touched
   }
 
-  public consultaCep(cep: string) {
+  public consultaCep(cep: string, form: NgForm) {
     const SOMENTE_DIGITOS_REGEX: RegExp = /\D/g
     const VALIDA_CEP_REGEX: RegExp = /^[0-9]{8}$/
     cep = cep.replace(SOMENTE_DIGITOS_REGEX, "")
     if(cep !== "" && VALIDA_CEP_REGEX.test(cep)) {
       this.http.get(`https://viacep.com.br/ws/${cep}/json/`).pipe(map(dados => dados))
         .subscribe(dados => {
-          console.log(dados);
+          console.log(dados)
+          this.populaDadosForm(dados, form)
         })
     }
+  }
 
+  private populaDadosForm(dados: any, formulario: NgForm) {
+    formulario.form.patchValue({
+      endereco: {
+        cep: dados.cep,
+        rua: dados.logradouro,
+        complemento: dados.complemento,
+        bairro: dados.bairro,
+        cidade: dados.localidade,
+        estado: dados.uf
+      }
+    })
   }
 
 }
