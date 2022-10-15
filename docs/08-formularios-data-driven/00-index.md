@@ -3,3 +3,5 @@
 ## [Criando Formulario com Codigo Angular](03-criando-form-com-codigo-angular.md)
 ## [Sincronizando HTML com FormGroup](04-sincronizando-html-com-formgroup.md)
 ## [Fazendo Submit](05-fazendo-submit.md)
+## [Resetando Formulario](06-resetando-form.md)
+## [Aplicando Validacao nos Campos](07-aplicando-validacao-nos-campos.md)
