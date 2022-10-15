@@ -1,1 +1,17 @@
-<p>data-driven-form works!</p>
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Insira o nome"
+        formControlName="nome" required/>
+    </div>
+    <div class="col-sm-12">
+      <label for="email">E-mail</label>
+      <input type="email" class="form-control" id="email" placeholder="Insira o e-mail"
+        formControlName="email" required email/>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<app-form-debug [formulario]="formulario"></app-form-debug>
+
