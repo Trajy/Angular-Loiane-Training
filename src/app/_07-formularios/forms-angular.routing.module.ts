@@ -1,4 +1,3 @@
-import { FormsAngularModule } from './forms-angular.module';
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from '@angular/router';
 import { DataDrivenFormComponent } from './data-driven/data-driven-form/data-driven-form.component';
