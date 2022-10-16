@@ -1,3 +1,74 @@
+# FormGroups: Agrupando dados
+
+No documento [Migrando formulario template driven para um formulario data driven](09-campos-de-endereco-migrando-um-formulario-template-driven-para-data-driven.md) os campos relativos a endereco foram declarados diretamento no objeto passado como argumento para o `FormBuilder`, porem podemos aninhar outros `FormGroups`.
+
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-data-driven-form',
+  templateUrl: './data-driven-form.component.html',
+  styleUrls: ['./data-driven-form.component.css']
+})
+export class DataDrivenFormComponent implements OnInit {
+
+  public formulario: FormGroup
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      nome: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      // aninhando FormGroup
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        numero: [null, Validators.required],
+        rua: [null, Validators.required],
+        complemento: null,
+        bairro: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required]
+      })
+    })
+  }
+
+  public onSubmit(): void {
+    console.log(this.formulario);
+    console.log(this.formulario.value);
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+      .subscribe(
+        response => {
+          console.log(response)
+          this.resetForm()
+        },
+        error => {
+          console.log('Erro na requisicao')
+        }
+      )
+  }
+
+  public resetForm(): void {
+    this.formulario.reset()
+  }
+
+  public aplicaCssErro(nomeCampo: string) {
+    return {
+      'has-error': this.verificaValidAndTouched(nomeCampo),
+      'has-feedback': this.verificaValidAndTouched(nomeCampo)
+    }
+  }
+
+  public verificaValidAndTouched(nomeCampo: string): boolean {
+    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
+  }
+}
+```
+para que o angular identifique os `FormControl` agrupados e necessario incluir os campos em uma div que possui a o atributo `formGroupName` (pare este exemplo recebe como valor `endereco`) e para os metodos `aplicaCssErro` e `verificaValidAndTouched` e necessario passar os controles aninhados, pois o metodo `get` esta sendo chamado pelo `FormGroup` raiz (exemplo para obter o `FormControl` `estado` que esta aninhado no `FormGroup` `endereco` o argumento passado ao metodo deve ser `endereco.estado`).
+
+```HTML
 <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <div class="col-sm-12" [ngClass]="aplicaCssErro('nome')">
@@ -12,12 +83,20 @@
         formControlName="email"/>
         <app-campo-erro [mostrarErro]="verificaValidAndTouched('email')" mensagemErro="O campo email e obrigatorio"></app-campo-erro>
     </div>
+
+    <!--Declaracao do formGroupName para agrupar os controles de endereco-->
     <div formGroupName="endereco">
+
+      <!--alterado o argumenro passado ao metodo aplicaCssErro de cep para endereco.cep-->
       <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.cep')">
         <label for="cep" class="control-label">Cep</label>
         <input type="text" class="form-control" id="cep" formControlName="cep"/>
+
+        <!--alterado o argumento passado ao metodo verificaValidAndTouched de cep para endereco.cep-->
         <app-campo-erro [mostrarErro]="verificaValidAndTouched('endereco.cep')" mensagemErro="O campo cep e obrigatorio"></app-campo-erro>
       </div>
+
+      <!--os demais campos seguem as alteracoes feitas no campo cep-->
       <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.numero')">
         <label for="numero" class="control-label">Numero</label>
         <input type="text" class="form-control" id="numero" formControlName="numero"/>
@@ -54,3 +133,9 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <app-form-debug [formulario]="formulario"></app-form-debug>
+```
+
+<p align="center"> 
+  <img src="img/campos-de-endereco-aninhados.png"><br>
+    campos referentes a endereco aninhados.
+</p>
