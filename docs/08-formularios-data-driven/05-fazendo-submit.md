@@ -51,6 +51,5 @@ export class DataDrivenFormComponent implements OnInit {
     this.http.post('enderecoServidor/formUsuario', JSON.stringify(this.formulario.value))
       .subscribe(response => console.log(response))
   }
-
 }
 ```

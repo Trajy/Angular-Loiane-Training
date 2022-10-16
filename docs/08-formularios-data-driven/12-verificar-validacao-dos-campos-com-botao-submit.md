@@ -1,3 +1,8 @@
+# Verificar Validacao dos Campos com Botao Submit
+
+o metodo `aplicaCssErro` verifica se o campo esta invalido e se ja foi tocado pelo usuario para aplicar o css de erro, porem o usuario pode nao ter tocado em todos os campos antes de realizar a tentativa de submit, para resolver essa questao podemos realizar a chamada do metodo `markAsTouched` da classe `FormControl`, podemos fazer uso da recursividade para acessar os campos aninhados do formulario. Utilizando o metodo `keys` da classe `Object` e possivel extrair um array com as chaves de um objeto (neste exemplo o `FormGroup` raiz).
+
+```typescript
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -49,55 +54,20 @@ export class DataDrivenFormComponent implements OnInit {
     }
   }
 
-  private markControlAsTouched(formulario: FormGroup) {
+  private markControlAsTouched(formulario: FormGroup): void {
     Object.keys(formulario.controls).forEach(key => {
       const control = formulario.get(key)
       control!.markAllAsTouched()
+      // chamada recursiva para a propria funcao
       if(control instanceof FormGroup) this.markControlAsTouched(control)
     })
   }
 
-  public resetForm(): void {
-    this.formulario.reset()
-  }
-
-  public aplicaCssErro(nomeCampo: string) {
-    return {
-      'has-error': this.verificaValidAndTouched(nomeCampo),
-      'has-feedback': this.verificaValidAndTouched(nomeCampo)
-    }
-  }
-
-  public verificaValidAndTouched(nomeCampo: string): boolean {
-    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
-  }
-
-  public consultaCep() {
-    console.log('entrei');
-    const SOMENTE_DIGITOS_REGEX: RegExp = /\D/g
-    const VALIDA_CEP_REGEX: RegExp = /^[0-9]{8}$/
-    const cep =this.formulario.get('endereco.cep')
-    console.log(cep);
-    cep?.setValue(cep.value.replace(SOMENTE_DIGITOS_REGEX, ""))
-    if(cep?.value !== "" && VALIDA_CEP_REGEX.test(cep?.value)) {
-      this.http.get(`https://viacep.com.br/ws/${cep?.value}/json/`).pipe(map(dados => dados))
-        .subscribe(dados => {
-          console.log(dados)
-          this.populaDadosForm(dados)
-        })
-    }
-  }
-
-  private populaDadosForm(dados: any) {
-    this.formulario.patchValue({
-      endereco: {
-        cep: dados.cep,
-        rua: dados.logradouro,
-        complemento: dados.complemento,
-        bairro: dados.bairro,
-        cidade: dados.localidade,
-        estado: dados.uf
-      }
-    })
-  }
+  // ...demais metodos
 }
+```
+
+<p align="center"> 
+  <img src="img/validando-campos-ao-clicar-no-botao-submit.gif"><br>
+    validando campos ao clicar em submit.
+</p>
