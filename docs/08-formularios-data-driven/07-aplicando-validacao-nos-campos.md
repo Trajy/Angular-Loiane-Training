@@ -1,6 +1,6 @@
 # Aplicando Validacao nos Campos
 
-As validacoes no caso de templates data driven, podem ser aplicadas deretamente no template HTML como nos exemplos da secao de formularios template driven, ou aplicadas como segundo argumento do array de configuracoes do `FormBuilder`. Utilizando a classe `Validators` do Angular.
+As validacoes no caso de templates data driven, podem ser aplicadas deretamente no template HTML como nos exemplos da secao de formularios template driven, ou aplicadas como segundo argumento do array de configuracoes do `FormBuilder`. Utilizando a classe [`Validators`](https://angular.io/api/forms/Validators) do Angular.
 
 ```typescript
 import { HttpClient } from '@angular/common/http';
