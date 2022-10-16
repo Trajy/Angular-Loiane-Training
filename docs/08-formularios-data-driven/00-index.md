@@ -5,4 +5,4 @@
 ## [Fazendo Submit](05-fazendo-submit.md)
 ## [Resetando Formulario](06-resetando-form.md)
 ## [Aplicando Validacao nos Campos](07-aplicando-validacao-nos-campos.md)
-## [Resetando Formulario](08-acesso-ao-formcontrol-e-css-de-validacao-dos-campos.md)
+## [Acesso ao FormControl e CSS de validacao](08-acesso-ao-formcontrol-e-css-de-validacao-dos-campos.md)
