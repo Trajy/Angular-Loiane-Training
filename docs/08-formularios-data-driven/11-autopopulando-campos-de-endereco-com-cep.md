@@ -1,3 +1,8 @@
+# Autopopulando Campos de Endereco com Cep
+
+Conforme a implementacao desenvolvida no documento [Pesquisa de Endereco por Cep Automaticamente](../07-formularios-template-driven/15-populando-campos-com-setvalue-e-patchvalue.md), a implementacao para o formulario data driven se da de forma similar, A diferenca e que neste caso temos acesso ao objeto do tipo `FormGroup` diretamente no codigo fonte typescript do _component_, portando nao ha necessidade de passar a referencia do formulario do HTML como argumento para a funcao `consultaCep`.
+
+```typescript
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -14,51 +19,7 @@ export class DataDrivenFormComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
-  ngOnInit(): void {
-    this.formulario = this.formBuilder.group({
-      nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
-      endereco: this.formBuilder.group({
-        cep: [null, Validators.required],
-        numero: [null, Validators.required],
-        rua: [null, Validators.required],
-        complemento: null,
-        bairro: [null, Validators.required],
-        cidade: [null, Validators.required],
-        estado: [null, Validators.required]
-      })
-    })
-  }
-
-  public onSubmit(): void {
-    console.log(this.formulario);
-    console.log(this.formulario.value);
-    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
-      .subscribe(
-        response => {
-          console.log(response)
-          this.resetForm()
-        },
-        error => {
-          console.log('Erro na requisicao')
-        }
-      )
-  }
-
-  public resetForm(): void {
-    this.formulario.reset()
-  }
-
-  public aplicaCssErro(nomeCampo: string) {
-    return {
-      'has-error': this.verificaValidAndTouched(nomeCampo),
-      'has-feedback': this.verificaValidAndTouched(nomeCampo)
-    }
-  }
-
-  public verificaValidAndTouched(nomeCampo: string): boolean {
-    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
-  }
+  // ...demais metodos
 
   public consultaCep() {
     console.log('entrei');
@@ -89,3 +50,26 @@ export class DataDrivenFormComponent implements OnInit {
     })
   }
 }
+```
+
+note que como cep e um `FormControl` aninhado ao `FormGroup` endereco e necessario passar como arumento `endereco.cep` para o metodo `get`.
+
+no HTML basta realizar a chamada do metodo `consultaCep` no evento de `blur` (quando o campo perde o foco) da tag `input`.
+
+```HTML
+<!--demais codigo HTML-->
+
+<div class="col-md-3" [ngClass]="aplicaCssErro('endereco.cep')">
+  <label for="cep" class="control-label">Cep</label>
+  <input type="text" class="form-control" id="cep" formControlName="cep"
+    (blur)="consultaCep()"/>
+  <app-campo-erro [mostrarErro]="verificaValidAndTouched('endereco.cep')" mensagemErro="O campo cep e obrigatorio"></app-campo-erro>
+</div>
+
+<!--demais codigo HTML-->
+```
+
+<p align="center"> 
+  <img src="img/autopopulando-campos-com-cep.gif"><br>
+    consultando cep.
+</p>
