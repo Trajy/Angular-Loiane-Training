@@ -11,3 +11,4 @@
 ## [Autopopulando Campos de Endereco com Cep](11-autopopulando-campos-de-endereco-com-cep.md)
 ## [Verificar Validacao dos Campos com Botao Submit](12-verificar-validacao-dos-campos-com-botao-submit.md)
 ## [Criando Servico de Estados Brasileiros](13-cirando-um-servico-de-estados-brasileiros.md)
+## [Servico de Consulta de Cep](14-servico-de-consulta-de-cep.md)

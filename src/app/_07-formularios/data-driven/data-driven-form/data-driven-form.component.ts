@@ -1,3 +1,4 @@
+import { CepService } from './../../../shared/cep/cep.service';
 import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,7 @@ export class DataDrivenFormComponent implements OnInit {
   public formulario: FormGroup
   public estados: EstadoBr[];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService, private cepService: CepService) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -32,8 +33,7 @@ export class DataDrivenFormComponent implements OnInit {
       })
     })
     this.dadosService.getEstadosBr().subscribe(
-      estados => {this.estados = estados; console.log(this.estados);}
-
+      estados => this.estados = estados
     )
   }
 
@@ -82,14 +82,9 @@ export class DataDrivenFormComponent implements OnInit {
   }
 
   public consultaCep() {
-    console.log('entrei');
-    const SOMENTE_DIGITOS_REGEX: RegExp = /\D/g
-    const VALIDA_CEP_REGEX: RegExp = /^[0-9]{8}$/
     const cep =this.formulario.get('endereco.cep')
-    console.log(cep);
-    cep?.setValue(cep.value.replace(SOMENTE_DIGITOS_REGEX, ""))
-    if(cep?.value !== "" && VALIDA_CEP_REGEX.test(cep?.value)) {
-      this.http.get(`https://viacep.com.br/ws/${cep?.value}/json/`).pipe(map(dados => dados))
+    if(cep?.value != null && cep?.value !== '') {
+      this.cepService.consultaCep(cep?.value)!.pipe(map(dados => dados))
         .subscribe(dados => {
           console.log(dados)
           this.populaDadosForm(dados)
@@ -110,3 +105,4 @@ export class DataDrivenFormComponent implements OnInit {
     })
   }
 }
+
