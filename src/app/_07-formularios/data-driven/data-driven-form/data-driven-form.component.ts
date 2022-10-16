@@ -23,8 +23,19 @@ export class DataDrivenFormComponent implements OnInit {
   public onSubmit(): void {
     console.log(this.formulario);
     console.log(this.formulario.value);
-    this.http.post('enderecoServidor/formUsuario', JSON.stringify(this.formulario.value))
-      .subscribe(response => console.log(response))
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+      .subscribe(
+        response => {
+          console.log(response)
+          this.resetForm()
+        },
+        error => {
+          console.log('Erro na requisicao')
+        }
+      )
   }
 
+  public resetForm(): void {
+    this.formulario.reset()
+  }
 }
