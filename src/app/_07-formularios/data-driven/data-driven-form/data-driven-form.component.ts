@@ -38,4 +38,15 @@ export class DataDrivenFormComponent implements OnInit {
   public resetForm(): void {
     this.formulario.reset()
   }
+
+  public aplicaCssErro(nomeCampo: string) {
+    return {
+      'has-error': this.verificaValidAndTouched(nomeCampo),
+      'has-feedback': this.verificaValidAndTouched(nomeCampo)
+    }
+  }
+
+  public verificaValidAndTouched(nomeCampo: string): boolean {
+    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
+  }
 }
