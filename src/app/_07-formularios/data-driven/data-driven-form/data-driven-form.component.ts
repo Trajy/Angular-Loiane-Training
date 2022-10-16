@@ -1,7 +1,9 @@
+import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
+import { DadosService } from '../../../shared/dropdown/dados.service';
 
 @Component({
   selector: 'app-data-driven-form',
@@ -11,8 +13,9 @@ import { map } from 'rxjs/operators';
 export class DataDrivenFormComponent implements OnInit {
 
   public formulario: FormGroup
+  public estados: EstadoBr[];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
@@ -28,9 +31,15 @@ export class DataDrivenFormComponent implements OnInit {
         estado: [null, Validators.required]
       })
     })
+    this.dadosService.getEstadosBr().subscribe(
+      estados => {this.estados = estados; console.log(this.estados);}
+
+    )
   }
 
   public onSubmit(): void {
+    console.log(this.estados);
+
     console.log(this.formulario);
     console.log(this.formulario.value);
     if(this.formulario.valid) {
