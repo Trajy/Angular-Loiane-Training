@@ -16,7 +16,14 @@ export class DataDrivenFormComponent implements OnInit {
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]]
+      email: [null, [Validators.required, Validators.email]],
+      cep: [null, Validators.required],
+      numero: [null, Validators.required],
+      rua: [null, Validators.required],
+      complemento: null,
+      bairro: [null, Validators.required],
+      cidade: [null, Validators.required],
+      estado: [null, Validators.required]
     })
   }
 

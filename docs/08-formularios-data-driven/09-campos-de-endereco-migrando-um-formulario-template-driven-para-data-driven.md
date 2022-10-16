@@ -1,3 +1,9 @@
+# Migrando formulario template driven para um formulario data driven
+
+Os formularios do tipo template driven e data driven possuem uma estrutura muito similar, deferenciando-se apenas nas implementacoes referentes ao framework - Angular - para ver a estrutura do formulario template driven com os campos de endereco vide [Adicionando campos de endereco: form Layout Bootstrap 3](../07-formularios-template-driven/11-adicionando-campos-de-endereco.md).
+No exemplo da documentacao acima, os campos relativos a endereco estao agrupado, neste exemplo para facilitar a compreensao os campos nao estao agrupados, para agrupar os campos vide [FormGroups: Agrupando Dados]().
+
+```HTML
 <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <div class="col-sm-12" [ngClass]="aplicaCssErro('nome')">
@@ -52,3 +58,71 @@
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <app-form-debug [formulario]="formulario"></app-form-debug>
+```
+
+no codigo typescrip do component, foram adicionados os novos `FormControl` ao `FormBuilder`
+
+```typescript
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-data-driven-form',
+  templateUrl: './data-driven-form.component.html',
+  styleUrls: ['./data-driven-form.component.css']
+})
+export class DataDrivenFormComponent implements OnInit {
+
+  public formulario: FormGroup
+
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+
+  ngOnInit(): void {
+    this.formulario = this.formBuilder.group({
+      nome: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      // novos campos adicionados ao template HTML
+      cep: [null, Validators.required],
+      numero: [null, Validators.required],
+      rua: [null, Validators.required],
+      complemento: null,
+      bairro: [null, Validators.required],
+      cidade: [null, Validators.required],
+      estado: [null, Validators.required]
+    })
+  }
+
+  public onSubmit(): void {
+    console.log(this.formulario);
+    console.log(this.formulario.value);
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+      .subscribe(
+        response => {
+          console.log(response)
+          this.resetForm()
+        },
+        error => {
+          console.log('Erro na requisicao')
+        }
+      )
+  }
+
+  public resetForm(): void {
+    this.formulario.reset()
+  }
+
+  public aplicaCssErro(nomeCampo: string) {
+    return {
+      'has-error': this.verificaValidAndTouched(nomeCampo),
+      'has-feedback': this.verificaValidAndTouched(nomeCampo)
+    }
+  }
+
+  public verificaValidAndTouched(nomeCampo: string): boolean {
+    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
+  }
+}
+```
+
+OBS: Visualmente ambos os formularios continuam iguais.
