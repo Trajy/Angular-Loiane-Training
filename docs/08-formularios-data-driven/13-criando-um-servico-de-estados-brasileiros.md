@@ -78,7 +78,6 @@ export class DataDrivenFormComponent implements OnInit {
   // ...demais metodos
 ```
 
-
 <p align="center"> 
   <img src="img/retorno-servico-de-estados.png"><br>
     objeto contendo os estados retornados pelo servico.
