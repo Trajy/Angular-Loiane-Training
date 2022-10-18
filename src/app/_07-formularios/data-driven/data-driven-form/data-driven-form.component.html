@@ -61,6 +61,14 @@
       <app-campo-erro [mostrarErro]="verificaValidAndTouched('endereco.estado')" mensagemErro="O campo estado e obrigatorio">
       </app-campo-erro>
     </div>
+    <div class="col-md-3" [ngClass]="aplicaCssErro('newsLetter')">
+      <label for="newsLetter" class="control-label">NewsLetter</label>
+      <div class="row" id="newsLetter">
+        <label class="radio-inline" *ngFor="let option of newsLetterOptions">
+          <input type="radio" name="inlineRadioOptions" formControlName="newsLetter" [value]="option.valor"/> {{ option.desc }}
+        </label>
+      </div>
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

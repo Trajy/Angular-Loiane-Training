@@ -1,11 +1,10 @@
-import { CepService } from './../../../shared/cep/cep.service';
-import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
-import { JitEvaluator } from '@angular/compiler';
+import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
+import { CepService } from './../../../shared/cep/cep.service';
 
 @Component({
   selector: 'app-data-driven-form',
@@ -17,6 +16,7 @@ export class DataDrivenFormComponent implements OnInit {
   public formulario: FormGroup
   public estados: EstadoBr[];
   public tecnologias: any[] = this.getTecnologias();
+  public newsLetterOptions: any[] = this.getNewsLetter()
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService, private cepService: CepService) { }
 
@@ -33,7 +33,8 @@ export class DataDrivenFormComponent implements OnInit {
         cidade: [null, Validators.required],
         estado: [null, Validators.required]
       }),
-      tecnologias: null
+      tecnologias: null,
+      newsLetter: null
     })
     this.dadosService.getEstadosBr().subscribe(
       estados => this.estados = estados
@@ -118,6 +119,13 @@ export class DataDrivenFormComponent implements OnInit {
       { nome: 'javascript', desc: 'Javascript' },
       { nome: 'php', desc: 'PHP' },
       { nome: 'ruby', desc: 'Ruby' }
+    ];
+  }
+
+  public getNewsLetter() {
+    return [
+      { valor: 's', desc: 'Sim' },
+      { valor: 'n', desc: 'Nao' }
     ];
   }
 }
