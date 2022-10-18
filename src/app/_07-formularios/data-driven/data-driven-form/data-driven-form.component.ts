@@ -34,7 +34,8 @@ export class DataDrivenFormComponent implements OnInit {
         estado: [null, Validators.required]
       }),
       tecnologias: null,
-      newsLetter: null
+      newsLetter: null,
+      termos: [null, Validators.pattern('true')],
     })
     this.dadosService.getEstadosBr().subscribe(
       estados => this.estados = estados

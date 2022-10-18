@@ -16,3 +16,4 @@
 ## [Combobox com objeto (ngValue e compareWith)](16-combobox-com-objeto-utilizando-ngvalue-e-comparewith.md)
 ## [Combobox Multiplo](17-combobox-multiplo-ou-select-multple.md)
 ## [Radio Button](18-radiobutton.md)
+## [Checkbox Toggle](19-checkbox-toggle.md)

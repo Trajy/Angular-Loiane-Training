@@ -69,6 +69,14 @@
         </label>
       </div>
     </div>
+    <div class="col-md-3" [ngClass]="aplicaCssErro('termos')">
+    <label for="newsLetter" class="control-label">NewsLetter</label>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" id="blankCheckbox" formControlName="termos"> Aceito os termos de
+        </label>
+      </div>
+    </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
