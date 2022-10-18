@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
+import { JitEvaluator } from '@angular/compiler';
 
 @Component({
   selector: 'app-data-driven-form',
@@ -15,6 +16,7 @@ export class DataDrivenFormComponent implements OnInit {
 
   public formulario: FormGroup
   public estados: EstadoBr[];
+  public tecnologias: any[] = this.getTecnologias();
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService, private cepService: CepService) { }
 
@@ -30,7 +32,8 @@ export class DataDrivenFormComponent implements OnInit {
         bairro: [null, Validators.required],
         cidade: [null, Validators.required],
         estado: [null, Validators.required]
-      })
+      }),
+      tecnologias: null
     })
     this.dadosService.getEstadosBr().subscribe(
       estados => this.estados = estados
@@ -100,9 +103,22 @@ export class DataDrivenFormComponent implements OnInit {
         complemento: dados.complemento,
         bairro: dados.bairro,
         cidade: dados.localidade,
-        estado: dados.uf
+        estado: {...this.estados.find(estado => estado.sigla == dados.uf)}
       }
     })
+  }
+
+  public compararEstadosNoSelector(obj1: any, obj2: any) {
+    return obj1 && obj2 ? (obj1.sigla == obj2.sigla) : obj1 === obj2
+  }
+
+  public getTecnologias() {
+    return [
+      { nome: 'java', desc: 'Java' },
+      { nome: 'javascript', desc: 'Javascript' },
+      { nome: 'php', desc: 'PHP' },
+      { nome: 'ruby', desc: 'Ruby' }
+    ];
   }
 }
 

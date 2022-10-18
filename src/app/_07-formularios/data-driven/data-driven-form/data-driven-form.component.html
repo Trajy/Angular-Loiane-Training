@@ -46,12 +46,20 @@
       </div>
       <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.estado')">
         <label for="estado" class="control-label">Estado</label>
-        <select type="text" class="form-control" id="estado" formControlName='estado'>
-          <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+        <select type="text" class="form-control" id="estado" formControlName='estado' [compareWith]="compararEstadosNoSelector">
+          <option *ngFor="let estado of estados" [ngValue]="estado">{{ estado.nome }}</option>
         </select>
         <app-campo-erro [mostrarErro]="verificaValidAndTouched('endereco.estado')" mensagemErro="O campo estado e obrigatorio">
         </app-campo-erro>
       </div>
+    </div>
+    <div class="col-md-3" [ngClass]="aplicaCssErro('tecnologias')">
+      <label for="tecnologias" class="control-label">Tecnologias</label>
+      <select multiple type="text" class="form-control" id="tecnologias" formControlName='tecnologias' [compareWith]="compararEstadosNoSelector">
+        <option *ngFor="let tecnologia of tecnologias" [ngValue]="tecnologia.nome">{{ tecnologia.desc }}</option>
+      </select>
+      <app-campo-erro [mostrarErro]="verificaValidAndTouched('endereco.estado')" mensagemErro="O campo estado e obrigatorio">
+      </app-campo-erro>
     </div>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
