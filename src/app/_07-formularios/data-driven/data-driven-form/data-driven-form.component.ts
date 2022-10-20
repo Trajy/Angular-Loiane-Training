@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
 import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
@@ -13,10 +13,11 @@ import { CepService } from './../../../shared/cep/cep.service';
 })
 export class DataDrivenFormComponent implements OnInit {
 
-  public formulario: FormGroup
+  public formulario: FormGroup;
   public estados: EstadoBr[];
   public tecnologias: any[] = this.getTecnologias();
-  public newsLetterOptions: any[] = this.getNewsLetter()
+  public newsLetterOptions: any[] = this.getNewsLetter();
+  public frameworks = ['Agular', 'React', 'Vue', 'Sencha'];
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService, private cepService: CepService) { }
 
@@ -36,10 +37,22 @@ export class DataDrivenFormComponent implements OnInit {
       tecnologias: null,
       newsLetter: null,
       termos: [null, Validators.pattern('true')],
+      frameworks: this.buildFormArray()
     })
     this.dadosService.getEstadosBr().subscribe(
       estados => this.estados = estados
     )
+    console.log(this.formulario.get('frameworks'));
+
+  }
+
+  public buildFormArray(): FormArray {
+    const values = this.frameworks.map(framework => new FormControl(false));
+    return this.formBuilder.array(values);
+  }
+
+  public getFrameworksControls() {
+    return this.formulario.get('frameworks') ? (<FormArray>this.formulario.get('frameworks')).controls : null;
   }
 
   public onSubmit(): void {
