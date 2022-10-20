@@ -55,7 +55,7 @@ export class DataDrivenFormComponent implements OnInit {
 }
 ```
 
-No template HTML o checkbox e adcionado conforma a estrutura descrita na documentacao [horizontal forms](https://getbootstrap.com/docs/3.3/css/#forms-horizontal) do [Bootstrap 3]() e o css de validacao aplicado conforme a secao [validation status](https://getbootstrap.com/docs/3.3/css/#forms-control-validation)
+No template HTML o checkbox e adcionado conforma a estrutura descrita na documentacao [horizontal forms](https://getbootstrap.com/docs/3.3/css/#forms-horizontal) do [Bootstrap 3](https://getbootstrap.com/docs/3.3/) e o css de validacao aplicado conforme a secao [validation status](https://getbootstrap.com/docs/3.3/css/#forms-control-validation)
 
 ```HTML
 <form class="form-horizontal" [formGroup]="formulario" (ngSubmit)="onSubmit()">
