@@ -95,6 +95,9 @@
               <input type="checkbox" [formControlName]="i"> {{ this.frameworks[i] }}
             </label>
           </div>
+          <app-campo-erro [mostrarErro]="verificaValidAndTouched('frameworks')"
+            mensagemErro="selecione pelo menos 1 checkbox">
+          </app-campo-erro>
         </div>
       </div>
     </div>

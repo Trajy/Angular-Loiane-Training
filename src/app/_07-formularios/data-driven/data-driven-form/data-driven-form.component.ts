@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
 import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
@@ -48,7 +48,7 @@ export class DataDrivenFormComponent implements OnInit {
 
   public buildFormArray(): FormArray {
     const values = this.frameworks.map(framework => new FormControl(false));
-    return this.formBuilder.array(values);
+    return this.formBuilder.array(values, this.requiredMinCheckbox());
   }
 
   public getFrameworksControls() {
@@ -141,6 +141,15 @@ export class DataDrivenFormComponent implements OnInit {
       { valor: 's', desc: 'Sim' },
       { valor: 'n', desc: 'Nao' }
     ];
+  }
+
+  public requiredMinCheckbox(min = 1): ValidatorFn {
+    const validator = (formulario: FormArray) => {
+      const totalChecked = formulario.controls.filter(control => control.value == true).length;
+      if(totalChecked < min) return { required: true }
+      return null;
+    };
+    return <ValidatorFn> validator
   }
 }
 
