@@ -19,3 +19,4 @@
 ## [Checkbox Toggle](19-checkbox-toggle.md)
 ## [FormArray: checkboxes dinamicos](20-checkboxes-dinamicos-com-formarray.md)
 ## [Validacao Customizada em FormArray](21-validacao-customizada-cep.md)
+## [Validacao Customizada](22-Validacao-customizada.md)

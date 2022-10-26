@@ -26,7 +26,7 @@ export class DataDrivenFormComponent implements OnInit {
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
       endereco: this.formBuilder.group({
-        cep: [null, Validators.required],
+        cep: [null, [Validators.required, this.validarCep]],
         numero: [null, Validators.required],
         rua: [null, Validators.required],
         complemento: null,
@@ -100,6 +100,7 @@ export class DataDrivenFormComponent implements OnInit {
   }
 
   public consultaCep() {
+    console.log(this.formulario.get('endereco.cep'))
     const cep =this.formulario.get('endereco.cep')
     if(cep?.value != null && cep?.value !== '') {
       this.cepService.consultaCep(cep?.value)!.pipe(map(dados => dados))
@@ -113,7 +114,7 @@ export class DataDrivenFormComponent implements OnInit {
   private populaDadosForm(dados: any) {
     this.formulario.patchValue({
       endereco: {
-        cep: dados.cep,
+
         rua: dados.logradouro,
         complemento: dados.complemento,
         bairro: dados.bairro,
@@ -150,6 +151,15 @@ export class DataDrivenFormComponent implements OnInit {
       return null;
     };
     return <ValidatorFn> validator
+  }
+
+  public validarCep(formControl: FormControl) {
+    const cep = formControl.value;
+    if(cep && cep !== '') {
+      const regexCep = /^[0-9]{8}$/;
+      return regexCep.test(cep) ? null : {cepInvalido: 'O cep nao e valido' }
+    }
+    return null;
   }
 }
 
