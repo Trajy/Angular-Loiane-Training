@@ -12,6 +12,15 @@
       <app-campo-erro [mostrarErro]="verificaValidAndTouched('email')" mensagemErro="O campo email e obrigatorio">
       </app-campo-erro>
     </div>
+    <div class="col-sm-12" [ngClass]="aplicaCssErro('confirmarEmail')">
+      <label for="confirmarEmail">Confirmar E-mail</label>
+      <input type="email" class="form-control" id="confirmarEmail" placeholder="Insira o e-mail" formControlName="confirmarEmail" />
+      <app-campo-erro [mostrarErro]="verificaValidAndTouched('confirmarEmail')" mensagemErro="O campo confirmar email e obrigatorio">
+      </app-campo-erro>
+      <app-campo-erro [mostrarErro]="this.formulario.get('confirmarEmail')?.hasError('notEquals')"
+          mensagemErro="Emails nao sao iguais">
+        </app-campo-erro>
+    </div>
     <div formGroupName="endereco">
       <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.cep')">
         <label for="cep" class="control-label">Cep</label>

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
+import { ValidaService } from '../services/valida.service';
 import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
 import { CepService } from './../../../shared/cep/cep.service';
 
@@ -25,6 +26,7 @@ export class DataDrivenFormComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
       email: [null, [Validators.required, Validators.email]],
+      confirmarEmail: [null, [Validators.required, Validators.email, ValidaService.equalsTo('email')]],
       endereco: this.formBuilder.group({
         cep: [null, [Validators.required, this.validarCep]],
         numero: [null, Validators.required],
@@ -96,7 +98,7 @@ export class DataDrivenFormComponent implements OnInit {
   }
 
   public verificaValidAndTouched(nomeCampo: string): boolean {
-    return this.formulario.get(nomeCampo)!.invalid && this.formulario.get(nomeCampo)!.touched
+    return this.formulario.get(nomeCampo)!.hasError('required') && this.formulario.get(nomeCampo)!.touched
   }
 
   public consultaCep() {
