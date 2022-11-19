@@ -13,4 +13,14 @@ export class ValidaService {
     }
     return validator;
   }
+
+  public static getErrorMesage(fieldName: string, validatorName: string, validatorValue?: any) {
+    const config = {
+      'required': `${fieldName} e obrigatorio`,
+      'minlength': `${fieldName} necessita ter no minimo ${validatorValue.requiredLength}`,
+      'maxlength': `${fieldName} necessita ter no maximo ${validatorValue.requiredLength}`,
+      'cepInvalido': 'cep invalido',
+    }
+    return config[validatorName];
+  }
 }

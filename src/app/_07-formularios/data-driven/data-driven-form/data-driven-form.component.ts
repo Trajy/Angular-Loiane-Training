@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { delay, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
 import { AsyncValidatorService } from '../services/async-validator.service';
 import { ValidaService } from '../services/valida.service';
@@ -31,7 +31,7 @@ export class DataDrivenFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
-      nome: [null, Validators.required],
+      nome: [null, [Validators.required, Validators.minLength(3)]],
       email: [null, [Validators.required, Validators.email], this.validaEmail.bind(this)],
       confirmarEmail: [null, [Validators.required, Validators.email, ValidaService.equalsTo('email')]],
       endereco: this.formBuilder.group({
@@ -159,7 +159,7 @@ export class DataDrivenFormComponent implements OnInit {
       if(totalChecked < min) return { required: true }
       return null;
     };
-    return <ValidatorFn> validator
+    return <ValidatorFn> <unknown>validator
   }
 
   public validarCep(formControl: FormControl) {

@@ -1,3 +1,4 @@
+import { ErrorMesageComponent } from './data-driven/error-mesage/error-mesage/error-mesage.component';
 import { FormDebugComponent } from './template-driven/form-debug/form-debug.component';
 import { FormsAngularRoutingModule } from './forms-angular.routing.module';
 import { TemplateDrivenFormComponent } from './template-driven/template-driven-form.component';
@@ -13,7 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
     TemplateDrivenFormComponent,
     DataDrivenFormComponent,
     FormDebugComponent,
-    CampoErroComponent
+    CampoErroComponent,
+    ErrorMesageComponent
   ],
   imports: [
     CommonModule,

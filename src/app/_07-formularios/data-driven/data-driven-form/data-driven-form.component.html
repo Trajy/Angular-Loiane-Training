@@ -3,8 +3,8 @@
     <div class="col-sm-12" [ngClass]="aplicaCssErro('nome')">
       <label for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" placeholder="Insira o nome" formControlName="nome" />
-      <app-campo-erro [mostrarErro]="verificaValidAndTouched('nome')" mensagemErro="O campo nome e obrigatorio">
-      </app-campo-erro>
+      <app-error-mesage [control]="formulario.get('nome')" label="Nome">
+      </app-error-mesage>
     </div>
     <div class="col-sm-12" [ngClass]="aplicaCssErro('email')">
       <label for="email">E-mail</label>

@@ -22,3 +22,4 @@
 ## [Validacao Customizada](22-Validacao-customizada.md)
 ## [Validacao Entre Dois Campos](23-validacao-entre-dois-campos.md)
 ## [Validacao Assincrona](24-validacoes-assincronas.md)
+## [Centralizando mensagem de Erros](25-servico-de-mensagens-de-erros.mdS)
