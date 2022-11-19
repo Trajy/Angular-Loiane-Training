@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { map } from 'rxjs/operators';
+import { delay, map } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
+import { AsyncValidatorService } from '../services/async-validator.service';
 import { ValidaService } from '../services/valida.service';
 import { EstadoBr } from './../../../../assets/dados/estados/estados.model';
 import { CepService } from './../../../shared/cep/cep.service';
@@ -20,12 +21,18 @@ export class DataDrivenFormComponent implements OnInit {
   public newsLetterOptions: any[] = this.getNewsLetter();
   public frameworks = ['Agular', 'React', 'Vue', 'Sencha'];
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private dadosService: DadosService, private cepService: CepService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private dadosService: DadosService,
+    private cepService: CepService,
+    private asyncService: AsyncValidatorService
+  ) { }
 
   ngOnInit(): void {
     this.formulario = this.formBuilder.group({
       nome: [null, Validators.required],
-      email: [null, [Validators.required, Validators.email]],
+      email: [null, [Validators.required, Validators.email], this.validaEmail.bind(this)],
       confirmarEmail: [null, [Validators.required, Validators.email, ValidaService.equalsTo('email')]],
       endereco: this.formBuilder.group({
         cep: [null, [Validators.required, this.validarCep]],
@@ -162,6 +169,13 @@ export class DataDrivenFormComponent implements OnInit {
       return regexCep.test(cep) ? null : {cepInvalido: 'O cep nao e valido' }
     }
     return null;
+  }
+
+  public validaEmail(formControl: FormControl) {
+    return this.asyncService.verificarEmail(formControl.value)
+      .pipe(
+        map(emailExiste => emailExiste ? { emailInvalido: true } : null)
+      )
   }
 }
 

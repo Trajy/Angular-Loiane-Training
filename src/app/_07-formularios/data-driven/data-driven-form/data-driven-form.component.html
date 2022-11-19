@@ -11,6 +11,12 @@
       <input type="email" class="form-control" id="email" placeholder="Insira o e-mail" formControlName="email" />
       <app-campo-erro [mostrarErro]="verificaValidAndTouched('email')" mensagemErro="O campo email e obrigatorio">
       </app-campo-erro>
+      <app-campo-erro [mostrarErro]="formulario.get('email')?.status === 'PENDING'" mensagemErro="Validando email">
+      </app-campo-erro>
+      <app-campo-erro [mostrarErro]="formulario.get('email')?.status === 'VALID'" mensagemErro="Email valido">
+      </app-campo-erro>
+      <app-campo-erro [mostrarErro]="formulario.get('email')?.hasError('emailInvalido')" mensagemErro="Email ja cadastrado">
+      </app-campo-erro>
     </div>
     <div class="col-sm-12" [ngClass]="aplicaCssErro('confirmarEmail')">
       <label for="confirmarEmail">Confirmar E-mail</label>
