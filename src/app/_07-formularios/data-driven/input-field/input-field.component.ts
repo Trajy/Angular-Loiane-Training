@@ -10,7 +10,6 @@ const INPUT_FIELD_VALUE_ACCESSOR = {
 @Component({
   selector: 'app-input-field',
   templateUrl: './input-field.component.html',
-  styleUrls: ['./input-field.component.css'],
   providers: [INPUT_FIELD_VALUE_ACCESSOR]
 })
 export class InputFieldComponent implements ControlValueAccessor {
