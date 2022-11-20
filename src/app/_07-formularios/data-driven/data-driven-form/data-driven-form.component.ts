@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
-import { map } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
+import { distinctUntilChanged, map, switchMap, tap } from 'rxjs/operators';
 import { DadosService } from '../../../shared/dropdown/dados.service';
 import { AsyncValidatorService } from '../services/async-validator.service';
 import { ValidaService } from '../services/valida.service';
@@ -53,6 +54,15 @@ export class DataDrivenFormComponent implements OnInit {
     )
     console.log(this.formulario.get('frameworks'));
 
+    this.formulario.get('endereco.cep').statusChanges
+      .pipe(
+        distinctUntilChanged(),
+        tap(value => console.log(`valor CEP: ${value}`)),
+        switchMap(status => status === 'VALID' ? this.cepService.consultaCep(this.formulario.get('endereco.cep').value) : EMPTY)
+      )
+      .subscribe(dados => {
+        dados ? this.populaDadosForm(dados) : { };
+      });
   }
 
   public buildFormArray(): FormArray {

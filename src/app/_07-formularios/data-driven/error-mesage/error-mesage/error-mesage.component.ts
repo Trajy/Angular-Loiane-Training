@@ -4,8 +4,7 @@ import { ValidaService } from './../../services/valida.service';
 
 @Component({
   selector: 'app-error-mesage',
-  templateUrl: './error-mesage.component.html',
-  styleUrls: ['./error-mesage.component.css']
+  templateUrl: './error-mesage.component.html'
 })
 export class ErrorMesageComponent {
 
