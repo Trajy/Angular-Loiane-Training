@@ -8,6 +8,7 @@ import { DataDrivenFormComponent } from './data-driven/data-driven-form/data-dri
 import { CommonModule } from '@angular/common';
 import { CampoErroComponent } from './template-driven/campo-erro/campo-erro/campo-erro.component';
 import { HttpClientModule } from '@angular/common/http';
+import { InputFieldComponent } from './data-driven/input-field/input-field.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     DataDrivenFormComponent,
     FormDebugComponent,
     CampoErroComponent,
-    ErrorMesageComponent
+    ErrorMesageComponent,
+    InputFieldComponent
   ],
   imports: [
     CommonModule,

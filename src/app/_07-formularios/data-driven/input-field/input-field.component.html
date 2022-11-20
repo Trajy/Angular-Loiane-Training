@@ -1,0 +1,5 @@
+<div class="col-sm-12" [ngClass]="classeCss">
+  <label [attr.for]="id">{{ label }}</label>
+  <input [(ngModel)]="value" [type]="type" class="form-control" [id]="id" [placeholder]="placeholder" [readOnly]="isDisabled" (blur)="this.onTouchedCallback(null)"/>
+  <app-error-mesage [control]="control" [label]="label"></app-error-mesage>
+</div>
